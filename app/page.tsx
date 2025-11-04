@@ -261,6 +261,18 @@ export default function Home() {
             <div className="space-y-32">
               <FadeInSection delay={0.2}>
                 <ProjectShowcase
+                  title="Device Monitoring & Food Order Dashboard"
+                  description="A real-time backend dashboard system for monitoring devices and tracking food orders across multiple locations. Features live device status updates, order management, and comprehensive data visualization for business intelligence. Built to handle concurrent operations and provide instant insights for operational decision-making."
+                  tags={['PHP', 'MySQL', 'JavaScript', 'AJAX', 'Bootstrap', 'Real-time Updates']}
+                  imageUrl="/xmeta/dashboard-placeholder.png"
+                  direction="left"
+                  liveUrl="#"
+                  githubUrl="#"
+                />
+              </FadeInSection>
+
+              <FadeInSection delay={0.2}>
+                <ProjectShowcase
                   title="New Zion Point-of-Sale (POS) System"
                   description="A comprehensive full-stack POS and business management system for LPG distribution companies. Features customer management, order processing, multi-branch inventory tracking, automated SMS notifications, and real-time sales analytics. Successfully transformed manual operations into a fully digital system, achieving 70% faster order processing and 50% reduction in errors."
                   tags={['PHP', 'MySQL', 'JavaScript', 'jQuery', 'Twilio API', 'TCPDF', 'Responsive Design']}
@@ -277,33 +289,9 @@ export default function Home() {
                     '/newzionpos/Screenshot 2025-11-01 175053.png',
                     '/newzionpos/Screenshot 2025-11-01 175140.png',
                   ]}
-                  direction="left"
+                  direction="right"
                   liveUrl="#"
                   githubUrl="#"
-                />
-              </FadeInSection>
-
-              <FadeInSection delay={0.2}>
-                <ProjectShowcase
-                  title="Task Management App"
-                  description="Collaborative task tracking application with real-time updates, drag-and-drop interface, and team workspace features."
-                  tags={['React', 'Node.js', 'MongoDB', 'Socket.io']}
-                  imageUrl="/project-2.jpg"
-                  direction="right"
-                  liveUrl="https://example.com"
-                  githubUrl="https://github.com"
-                />
-              </FadeInSection>
-
-              <FadeInSection delay={0.2}>
-                <ProjectShowcase
-                  title="Portfolio CMS"
-                  description="Custom content management system for creative professionals. Includes media library, SEO optimization, and dynamic page builder."
-                  tags={['PHP', 'MySQL', 'Tailwind', 'Alpine.js']}
-                  imageUrl="/project-3.jpg"
-                  direction="left"
-                  liveUrl="https://example.com"
-                  githubUrl="https://github.com"
                 />
               </FadeInSection>
             </div>
