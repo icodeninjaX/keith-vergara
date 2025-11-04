@@ -323,31 +323,21 @@ export default function Home() {
             <div className="space-y-16 relative before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-gradient-to-b before:from-cyan-400 before:via-purple-400 before:to-pink-400">
               <FadeInSection delay={0.1}>
                 <WorkItem
-                  year="2023"
-                  title="Senior Frontend Developer"
-                  company="Tech Company"
-                  description="Leading development of modern web applications. Architected scalable solutions using React and Next.js while mentoring team members."
-                  tags={['React', 'Next.js', 'TypeScript', 'Team Lead']}
+                  year="2024"
+                  title="Full-Stack Web Developer"
+                  company="X-META TECHNOLOGIES INC"
+                  description="Developing full-stack web applications using modern technologies. Working in a hybrid environment to build scalable and responsive solutions for diverse client needs."
+                  tags={['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL', 'Full-Stack Development']}
                 />
               </FadeInSection>
 
               <FadeInSection delay={0.2}>
                 <WorkItem
-                  year="2021"
-                  title="Full Stack Developer"
-                  company="Startup Inc"
-                  description="Built end-to-end features for a SaaS platform. Designed RESTful APIs and created responsive user interfaces."
-                  tags={['MERN Stack', 'REST API', 'UI/UX']}
-                />
-              </FadeInSection>
-
-              <FadeInSection delay={0.3}>
-                <WorkItem
-                  year="2020"
-                  title="Junior Developer"
-                  company="Digital Agency"
-                  description="Developed client websites and applications. Collaborated closely with designers to deliver pixel-perfect implementations."
-                  tags={['JavaScript', 'React', 'CSS']}
+                  year="2023"
+                  title="Junior Web Developer"
+                  company="New Zion LPG"
+                  description="Developed a comprehensive Point-of-Sale and business management system for an LPG distribution company serving multiple branches in Parañaque and Las Piñas. Built customer management, inventory tracking, and automated notification features."
+                  tags={['PHP', 'MySQL', 'JavaScript', 'jQuery', 'Web Design', 'CSS', 'Twilio API']}
                 />
               </FadeInSection>
             </div>
