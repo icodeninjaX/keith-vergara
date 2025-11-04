@@ -4,6 +4,25 @@
 
 This is a modern, animated portfolio website built with Next.js 15, showcasing a developer's skills, projects, and work experience. The site features smooth animations, an asymmetric layout design, and a dark theme with cyan/purple/pink accent colors.
 
+## Developer Profile
+
+**Background**: Information Systems graduate with experience in both full-stack web development and hardware repair, combined with a strong interest in psychology and human behavior.
+
+**Philosophy**: Great development isn't just about writing code—it's about understanding people and creating solutions that make their work easier. This approach combines technical architecture with human needs to create genuinely useful solutions.
+
+**Current Focus**:
+- Mastering fundamentals before jumping into modern frameworks
+- Building interconnected systems that solve real business problems
+- Studying cognitive patterns to design better user experiences
+- Turning complex data into clear, actionable insights
+- Valuing depth over shortcuts in both technical and human systems
+
+**What Makes This Developer Different**:
+- Dual perspective from programming and hardware repair background
+- Focus on "why it matters" and "who it will help" rather than just "how to build it"
+- Understanding of both technical and business sides to create practical solutions
+- Emphasis on building things the right way, even if it takes longer
+
 ## Tech Stack
 
 - **Framework**: Next.js 15.5.4 (App Router)
@@ -48,12 +67,18 @@ portfolio-app/
 - Color-coded accent borders (cyan, purple, pink)
 - Hover animations and pulsing indicators
 - Categories:
-  - Frontend: HTML5, CSS3, JavaScript, jQuery
+  - Frontend: HTML5, CSS3, JavaScript, jQuery, Bootstrap, AJAX
   - Backend: PHP 7.4+, MySQLi, Prepared Statements
   - Database: MySQL 8.0, Database Design, SQL Optimization, Indexing
-  - Styling & Design: CSS Grid, Flexbox, Responsive Design, Dark Mode
-  - APIs & Integrations: Twilio, Semaphore SMS, Guzzle HTTP, TCPDF
+  - Styling & Design: CSS Grid, Flexbox, Responsive Design, Dark Mode, Bootstrap
+  - APIs & Integrations: Twilio, Semaphore SMS, Guzzle HTTP, TCPDF, Leaflet, Google Maps API
   - DevOps & Tools: Git, Composer, Apache, XAMPP
+
+**Current Professional Stack** (X-Meta Technologies):
+- Frontend: HTML5, CSS3, JavaScript, Bootstrap, AJAX
+- Backend: PHP, MySQL
+- Version Control: Git
+- Mapping/Geolocation: Leaflet, Google Maps API
 
 ### 4. Projects Section
 - Featured project showcases with detailed descriptions
@@ -67,14 +92,49 @@ portfolio-app/
 - Links to live demos and GitHub repos
 - Alternating left/right layouts
 
+**Featured Projects to Consider Adding**:
+
+1. **Device Monitoring & Food Order Dashboard** (X-Meta Technologies)
+   - Backend dashboard with real-time device monitoring
+   - Food order tracking system
+   - Real-time updates and data visualization
+   - Tech: PHP, MySQL, JavaScript, AJAX
+
+2. **Ads Booking System with Budget Calculator** (X-Meta Technologies)
+   - Integrated budget calculator for advertising spend planning
+   - Helps clients determine optimal advertising budgets
+   - Tech: PHP, MySQL, JavaScript, Bootstrap
+
+3. **Multi-Branch Location & Usage Map** (X-Meta Technologies)
+   - Interactive map showing device locations across multiple branches
+   - Real-time mobile data usage tracking
+   - Map integration using Leaflet and Google Maps API
+   - Transforms complex data into actionable insights
+   - Tech: JavaScript, Leaflet, Google Maps API, PHP, MySQL
+
+4. **New Zion Point-of-Sale (POS) System** (Currently Featured)
+   - Already documented in the portfolio
+   - Comprehensive business management system for LPG distribution
+
 ### 5. Work Experience Section
 - Timeline-style layout
 - Vertical gradient line indicator
 - Animated dots marking each position
 - Tags for technologies used
 - Current positions:
-  - Full-Stack Web Developer at X-META TECHNOLOGIES INC (2024)
-  - Junior Web Developer at New Zion LPG (2023)
+  - **Full-Stack Web Developer at X-META TECHNOLOGIES INC (2024)**
+    - Developing interconnected web applications focused on solving real business problems
+    - Built backend dashboard for real-time device monitoring and food order tracking
+    - Created ads booking system with integrated budget calculator for client advertising spend planning
+    - Implemented map integration using Leaflet and Google Maps to display device locations and mobile data usage across multiple branches in real-time
+    - Tech stack: HTML5, CSS3, JavaScript, Bootstrap, AJAX, PHP, MySQL, Git
+    - Focus on creating solutions that are both technically sound and genuinely useful for end users
+  - **Junior Web Developer at New Zion LPG (2023) - Internship**
+    - Developed comprehensive Point-of-Sale and business management system for LPG distribution company
+    - Built customer dashboard connected to POS systems for multi-branch operations
+    - Implemented SMS notification feature using Twilio API to improve communication between branches in Parañaque and Las Piñas
+    - Created customer management, inventory tracking, and automated notification features
+    - Achieved 70% faster order processing and 50% reduction in errors by digitizing manual operations
 
 ### 6. Footer
 - Contact section with social links

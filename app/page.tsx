@@ -167,16 +167,16 @@ export default function Home() {
                       <span className="text-purple-400">const</span> <span className="text-cyan-300">skills</span> = {'{'}
                     </motion.div>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="pl-4">
-                      <span className="text-pink-400">frontend</span>: [<span className="text-green-300">&apos;HTML5&apos;</span>, <span className="text-green-300">&apos;CSS3&apos;</span>, <span className="text-green-300">&apos;JavaScript&apos;</span>, <span className="text-green-300">&apos;jQuery&apos;</span>],
+                      <span className="text-pink-400">frontend</span>: [<span className="text-green-300">&apos;HTML5&apos;</span>, <span className="text-green-300">&apos;CSS3&apos;</span>, <span className="text-green-300">&apos;JavaScript&apos;</span>, <span className="text-green-300">&apos;Bootstrap&apos;</span>, <span className="text-green-300">&apos;AJAX&apos;</span>],
                     </motion.div>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="pl-4">
-                      <span className="text-pink-400">backend</span>: [<span className="text-green-300">&apos;PHP 7.4+&apos;</span>, <span className="text-green-300">&apos;MySQLi&apos;</span>],
+                      <span className="text-pink-400">backend</span>: [<span className="text-green-300">&apos;PHP 7.4+&apos;</span>, <span className="text-green-300">&apos;MySQL&apos;</span>, <span className="text-green-300">&apos;MySQLi&apos;</span>],
                     </motion.div>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }} className="pl-4">
                       <span className="text-pink-400">database</span>: [<span className="text-green-300">&apos;MySQL 8.0&apos;</span>, <span className="text-green-300">&apos;SQL Optimization&apos;</span>],
                     </motion.div>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.0 }} className="pl-4">
-                      <span className="text-pink-400">apis</span>: [<span className="text-green-300">&apos;Twilio&apos;</span>, <span className="text-green-300">&apos;Semaphore SMS&apos;</span>, <span className="text-green-300">&apos;TCPDF&apos;</span>],
+                      <span className="text-pink-400">apis</span>: [<span className="text-green-300">&apos;Twilio&apos;</span>, <span className="text-green-300">&apos;Leaflet&apos;</span>, <span className="text-green-300">&apos;Google Maps&apos;</span>, <span className="text-green-300">&apos;TCPDF&apos;</span>],
                     </motion.div>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }} className="pl-4">
                       <span className="text-pink-400">tools</span>: [<span className="text-green-300">&apos;Git&apos;</span>, <span className="text-green-300">&apos;Composer&apos;</span>, <span className="text-green-300">&apos;Apache&apos;</span>]
@@ -205,7 +205,7 @@ export default function Home() {
               <FadeInSection delay={0.1}>
                 <TechCategory
                   title="Frontend"
-                  items={['HTML5', 'CSS3', 'JavaScript', 'jQuery']}
+                  items={['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap', 'AJAX']}
                   accent="cyan"
                 />
               </FadeInSection>
@@ -226,14 +226,14 @@ export default function Home() {
               <FadeInSection delay={0.4}>
                 <TechCategory
                   title="Styling & Design"
-                  items={['CSS Grid', 'Flexbox', 'Responsive Design', 'Dark Mode', 'Material Icons']}
+                  items={['CSS Grid', 'Flexbox', 'Responsive Design', 'Dark Mode', 'Bootstrap']}
                   accent="cyan"
                 />
               </FadeInSection>
               <FadeInSection delay={0.5}>
                 <TechCategory
                   title="APIs & Integrations"
-                  items={['Twilio SDK', 'Semaphore SMS', 'Guzzle HTTP', 'TCPDF', 'REST APIs']}
+                  items={['Twilio SDK', 'Leaflet', 'Google Maps API', 'TCPDF', 'REST APIs']}
                   accent="purple"
                 />
               </FadeInSection>
@@ -326,18 +326,18 @@ export default function Home() {
                   year="2024"
                   title="Full-Stack Web Developer"
                   company="X-META TECHNOLOGIES INC"
-                  description="Developing full-stack web applications using modern technologies. Working in a hybrid environment to build scalable and responsive solutions for diverse client needs."
-                  tags={['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL', 'Full-Stack Development']}
+                  description="Building interconnected web applications focused on solving real business problems. Developed a backend dashboard with real-time device monitoring and food order tracking, an ads booking system with integrated budget calculator, and map integration using Leaflet and Google Maps to display device locations and mobile data usage across multiple branches in real-time."
+                  tags={['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'AJAX', 'PHP', 'MySQL', 'Git', 'Leaflet', 'Google Maps API']}
                 />
               </FadeInSection>
 
               <FadeInSection delay={0.2}>
                 <WorkItem
                   year="2023"
-                  title="Junior Web Developer"
+                  title="Junior Web Developer (Internship)"
                   company="New Zion LPG"
-                  description="Developed a comprehensive Point-of-Sale and business management system for an LPG distribution company serving multiple branches in Parañaque and Las Piñas. Built customer management, inventory tracking, and automated notification features."
-                  tags={['PHP', 'MySQL', 'JavaScript', 'jQuery', 'Web Design', 'CSS', 'Twilio API']}
+                  description="Developed a comprehensive Point-of-Sale and business management system for an LPG distribution company serving multiple branches in Parañaque and Las Piñas. Built customer dashboard connected to POS systems, SMS notification feature for branch communication, and implemented customer management, inventory tracking, and automated notification features. Achieved 70% faster order processing and 50% reduction in errors."
+                  tags={['PHP', 'MySQL', 'JavaScript', 'jQuery', 'CSS', 'Twilio API', 'TCPDF']}
                 />
               </FadeInSection>
             </div>
