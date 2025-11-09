@@ -232,7 +232,7 @@ export default function Home() {
           {/* Animated Background Elements */}
           <div className="absolute inset-0 opacity-20">
             <motion.div
-              className="absolute top-1/4 left-1/3 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl"
+              className="absolute top-1/4 left-1/3 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl"
               animate={{
                 scale: [1, 1.1, 1],
                 x: [0, 30, 0],
@@ -245,7 +245,7 @@ export default function Home() {
               }}
             />
             <motion.div
-              className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl"
+              className="absolute top-1/3 right-1/4 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl"
               animate={{
                 scale: [1, 1.1, 1],
                 x: [0, -20, 0],
@@ -259,7 +259,7 @@ export default function Home() {
               }}
             />
             <motion.div
-              className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl"
+              className="absolute bottom-1/4 left-1/2 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl"
               animate={{
                 scale: [1, 0.9, 1],
                 x: [0, 20, 0],
@@ -274,27 +274,27 @@ export default function Home() {
             />
           </div>
 
-          <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-12 md:py-16 lg:py-20 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
               {/* Left - Main Text */}
-              <div className="space-y-8 lg:pt-20">
+              <div className="space-y-6 md:space-y-8 lg:pt-20">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                   className="inline-block"
                 >
-                  <span className="text-cyan-400 font-mono text-sm tracking-wider">{'// Developer & Designer'}</span>
+                  <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// Developer & Designer'}</span>
                 </motion.div>
 
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="text-6xl lg:text-8xl font-bold leading-none"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-none"
                 >
                   <span className="block">Building</span>
-                  <span className="block mt-2 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                     Solutions
                   </span>
                 </motion.h1>
@@ -303,7 +303,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-xl text-gray-400 max-w-lg leading-relaxed"
+                  className="text-base sm:text-lg md:text-xl text-gray-400 max-w-lg leading-relaxed"
                 >
                   I build web applications that solve real business problems by understanding both the technical architecture and the people who use them. My background in hardware repair and interest in human behavior helps me create solutions that are genuinely useful, not just technically sound.
                 </motion.p>
@@ -312,11 +312,11 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="flex flex-wrap gap-4 pt-4"
+                  className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4"
                 >
                   <a
                     href="#projects"
-                    className="group relative px-6 py-3 overflow-hidden bg-white text-black font-medium"
+                    className="group relative px-6 py-3 overflow-hidden bg-white text-black font-medium text-center min-h-[44px] flex items-center justify-center"
                   >
                     <span className="relative z-10">View Projects</span>
                     <div className="absolute inset-0 bg-cyan-400 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
@@ -324,7 +324,7 @@ export default function Home() {
                   <a
                     href="/resume.pdf"
                     download
-                    className="group relative px-6 py-3 overflow-hidden border border-gray-700 hover:border-purple-400 transition-all"
+                    className="group relative px-6 py-3 overflow-hidden border border-gray-700 hover:border-purple-400 transition-all text-center min-h-[44px] flex items-center justify-center"
                   >
                     <span className="relative z-10 flex items-center gap-2">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -336,7 +336,7 @@ export default function Home() {
                   </a>
                   <a
                     href="#contact"
-                    className="px-6 py-3 border border-gray-700 hover:border-cyan-400 transition-colors"
+                    className="px-6 py-3 border border-gray-700 hover:border-cyan-400 transition-colors text-center min-h-[44px] flex items-center justify-center"
                   >
                     Contact
                   </a>
@@ -348,34 +348,34 @@ export default function Home() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="lg:pt-32 font-mono text-sm"
+                className="lg:pt-32 font-mono text-xs sm:text-sm"
               >
                 <div className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
-                  <div className="bg-gray-800 px-4 py-2 flex items-center gap-2">
-                    <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-500" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                      <div className="w-3 h-3 rounded-full bg-green-500" />
+                  <div className="bg-gray-800 px-3 sm:px-4 py-2 flex items-center gap-2">
+                    <div className="flex gap-1 sm:gap-1.5">
+                      <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500" />
+                      <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500" />
+                      <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500" />
                     </div>
                     <span className="text-gray-500 text-xs ml-2">developer.ts</span>
                   </div>
-                  <div className="p-6 space-y-2 text-sm">
+                  <div className="p-4 sm:p-6 space-y-1 sm:space-y-2 text-xs sm:text-sm overflow-x-auto">
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
                       <span className="text-purple-400">const</span> <span className="text-cyan-300">skills</span> = {'{'}
                     </motion.div>
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="pl-4">
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="pl-2 sm:pl-4">
                       <span className="text-pink-400">frontend</span>: [<span className="text-green-300">&apos;HTML5&apos;</span>, <span className="text-green-300">&apos;CSS3&apos;</span>, <span className="text-green-300">&apos;JavaScript&apos;</span>, <span className="text-green-300">&apos;Bootstrap&apos;</span>, <span className="text-green-300">&apos;AJAX&apos;</span>],
                     </motion.div>
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="pl-4">
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="pl-2 sm:pl-4">
                       <span className="text-pink-400">backend</span>: [<span className="text-green-300">&apos;PHP 7.4+&apos;</span>, <span className="text-green-300">&apos;MySQL&apos;</span>, <span className="text-green-300">&apos;MySQLi&apos;</span>],
                     </motion.div>
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }} className="pl-4">
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }} className="pl-2 sm:pl-4">
                       <span className="text-pink-400">database</span>: [<span className="text-green-300">&apos;MySQL 8.0&apos;</span>, <span className="text-green-300">&apos;SQL Optimization&apos;</span>],
                     </motion.div>
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.0 }} className="pl-4">
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.0 }} className="pl-2 sm:pl-4">
                       <span className="text-pink-400">apis</span>: [<span className="text-green-300">&apos;Twilio&apos;</span>, <span className="text-green-300">&apos;Leaflet&apos;</span>, <span className="text-green-300">&apos;Google Maps&apos;</span>, <span className="text-green-300">&apos;TCPDF&apos;</span>],
                     </motion.div>
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }} className="pl-4">
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }} className="pl-2 sm:pl-4">
                       <span className="text-pink-400">tools</span>: [<span className="text-green-300">&apos;Git&apos;</span>, <span className="text-green-300">&apos;Composer&apos;</span>, <span className="text-green-300">&apos;Apache&apos;</span>]
                     </motion.div>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}>
@@ -389,37 +389,37 @@ export default function Home() {
         </section>
 
         {/* About Me Section */}
-        <section id="about" className="py-32 px-8 lg:px-16 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
+        <section id="about" className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-16 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
           {/* Subtle Background Accent */}
           <div className="absolute top-1/2 left-0 w-1/3 h-96 bg-cyan-500/5 rounded-full filter blur-3xl" />
           <div className="absolute top-1/3 right-0 w-1/3 h-96 bg-purple-500/5 rounded-full filter blur-3xl" />
 
           <div className="max-w-4xl mx-auto relative z-10">
             <FadeInSection>
-              <div className="mb-16 text-center">
-                <span className="text-cyan-400 font-mono text-sm tracking-wider">{'// About Me'}</span>
-                <h2 className="text-5xl font-bold mt-4">Beyond the Code</h2>
+              <div className="mb-10 sm:mb-12 md:mb-16 text-center">
+                <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// About Me'}</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">Beyond the Code</h2>
               </div>
             </FadeInSection>
 
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-10 md:space-y-12">
               {/* Philosophy Cards */}
               <FadeInSection delay={0.1}>
                 <div className="grid md:grid-cols-2 gap-8">
                   {/* Card 1: Dual Background */}
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="bg-gray-900/50 border border-gray-800 p-8 rounded-lg backdrop-blur-sm"
+                    className="bg-gray-900/50 border border-gray-800 p-6 sm:p-8 rounded-lg backdrop-blur-sm"
                   >
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center gap-3 mb-3 sm:mb-4">
                       <motion.div
                         className="w-2 h-2 rounded-full bg-cyan-400"
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       />
-                      <h3 className="text-xl font-bold text-cyan-400">Dual Perspective</h3>
+                      <h3 className="text-lg sm:text-xl font-bold text-cyan-400">Dual Perspective</h3>
                     </div>
-                    <p className="text-gray-400 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                       My background spans both <span className="text-white font-medium">software development</span> and <span className="text-white font-medium">hardware repair</span>. This unique combination gives me a deeper understanding of how systems work—not just in code, but in the real world where things can break, users get frustrated, and solutions need to be both technically sound and practically useful.
                     </p>
                   </motion.div>
@@ -427,17 +427,17 @@ export default function Home() {
                   {/* Card 2: Psychology & People */}
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="bg-gray-900/50 border border-gray-800 p-8 rounded-lg backdrop-blur-sm"
+                    className="bg-gray-900/50 border border-gray-800 p-6 sm:p-8 rounded-lg backdrop-blur-sm"
                   >
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center gap-3 mb-3 sm:mb-4">
                       <motion.div
                         className="w-2 h-2 rounded-full bg-purple-400"
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
                       />
-                      <h3 className="text-xl font-bold text-purple-400">Understanding People</h3>
+                      <h3 className="text-lg sm:text-xl font-bold text-purple-400">Understanding People</h3>
                     </div>
-                    <p className="text-gray-400 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                       I&apos;m fascinated by <span className="text-white font-medium">psychology and human behavior</span>. This interest shapes how I approach development—I don&apos;t just ask &quot;how do I build this?&quot; but also <span className="text-white font-medium">&quot;why does it matter?&quot;</span> and <span className="text-white font-medium">&quot;who will this help?&quot;</span> Great software isn&apos;t just about elegant code; it&apos;s about understanding the people who use it.
                     </p>
                   </motion.div>
@@ -448,16 +448,16 @@ export default function Home() {
               <FadeInSection delay={0.2}>
                 <motion.div
                   whileHover={{ scale: 1.01 }}
-                  className="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 border border-gray-800 p-10 rounded-lg relative overflow-hidden"
+                  className="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 border border-gray-800 p-6 sm:p-8 md:p-10 rounded-lg relative overflow-hidden"
                 >
                   {/* Accent line */}
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-purple-400 to-pink-400" />
 
-                  <div className="pl-6">
-                    <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  <div className="pl-4 sm:pl-6">
+                    <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                       My Development Philosophy
                     </h3>
-                    <div className="space-y-4 text-gray-300 leading-relaxed">
+                    <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed">
                       <p>
                         I believe great development isn&apos;t just about writing code—it&apos;s about <span className="text-white font-medium">understanding both the technical architecture and the human needs</span> behind every project.
                       </p>
@@ -474,32 +474,32 @@ export default function Home() {
 
               {/* Key Principles */}
               <FadeInSection delay={0.3}>
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="text-center p-6 border border-gray-800 rounded-lg bg-gray-950/50"
+                    className="text-center p-5 sm:p-6 border border-gray-800 rounded-lg bg-gray-950/50"
                   >
-                    <div className="text-4xl mb-4">🎯</div>
-                    <h4 className="font-bold text-lg mb-2 text-cyan-400">Purpose First</h4>
-                    <p className="text-sm text-gray-400">Understanding the &quot;why&quot; and &quot;who it helps&quot; before diving into implementation</p>
+                    <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🎯</div>
+                    <h4 className="font-bold text-base sm:text-lg mb-2 text-cyan-400">Purpose First</h4>
+                    <p className="text-xs sm:text-sm text-gray-400">Understanding the &quot;why&quot; and &quot;who it helps&quot; before diving into implementation</p>
                   </motion.div>
 
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="text-center p-6 border border-gray-800 rounded-lg bg-gray-950/50"
+                    className="text-center p-5 sm:p-6 border border-gray-800 rounded-lg bg-gray-950/50"
                   >
-                    <div className="text-4xl mb-4">🔧</div>
-                    <h4 className="font-bold text-lg mb-2 text-purple-400">Practical Solutions</h4>
-                    <p className="text-sm text-gray-400">Building systems that work in the real world, not just in theory</p>
+                    <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🔧</div>
+                    <h4 className="font-bold text-base sm:text-lg mb-2 text-purple-400">Practical Solutions</h4>
+                    <p className="text-xs sm:text-sm text-gray-400">Building systems that work in the real world, not just in theory</p>
                   </motion.div>
 
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="text-center p-6 border border-gray-800 rounded-lg bg-gray-950/50"
+                    className="text-center p-5 sm:p-6 border border-gray-800 rounded-lg bg-gray-950/50 sm:col-span-2 md:col-span-1"
                   >
-                    <div className="text-4xl mb-4">🧠</div>
-                    <h4 className="font-bold text-lg mb-2 text-pink-400">Human-Centered</h4>
-                    <p className="text-sm text-gray-400">Designing with empathy for the people who will actually use the system</p>
+                    <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🧠</div>
+                    <h4 className="font-bold text-base sm:text-lg mb-2 text-pink-400">Human-Centered</h4>
+                    <p className="text-xs sm:text-sm text-gray-400">Designing with empathy for the people who will actually use the system</p>
                   </motion.div>
                 </div>
               </FadeInSection>
@@ -508,12 +508,12 @@ export default function Home() {
         </section>
 
         {/* Tech Stack - Cards with Icons */}
-        <section id="stack" className="py-32 px-8 lg:px-16 bg-gradient-to-b from-black to-gray-950">
+        <section id="stack" className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-16 bg-gradient-to-b from-black to-gray-950">
           <div className="max-w-7xl mx-auto">
             <FadeInSection>
-              <div className="mb-16">
-                <span className="text-cyan-400 font-mono text-sm tracking-wider">{'// Tech Arsenal'}</span>
-                <h2 className="text-5xl font-bold mt-4">Tools I Use</h2>
+              <div className="mb-10 sm:mb-12 md:mb-16">
+                <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// Tech Arsenal'}</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">Tools I Use</h2>
               </div>
             </FadeInSection>
 
@@ -565,16 +565,16 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-32 px-8 lg:px-16 bg-black">
+        <section id="projects" className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-16 bg-black">
           <div className="max-w-7xl mx-auto">
             <FadeInSection>
-              <div className="mb-16">
-                <span className="text-cyan-400 font-mono text-sm tracking-wider">{'// Featured Work'}</span>
-                <h2 className="text-5xl font-bold mt-4">Projects</h2>
+              <div className="mb-10 sm:mb-12 md:mb-16">
+                <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// Featured Work'}</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">Projects</h2>
               </div>
             </FadeInSection>
 
-            <div className="space-y-32">
+            <div className="space-y-16 sm:space-y-20 md:space-y-24 lg:space-y-32">
               <FadeInSection delay={0.2}>
                 <ProjectShowcase
                   title="Device Monitoring & Food Order Dashboard"
@@ -653,41 +653,41 @@ export default function Home() {
         </section>
 
         {/* Process/Philosophy Section */}
-        <section className="py-32 px-8 lg:px-16 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
+        <section className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-16 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
           {/* Background Elements */}
           <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-500/5 rounded-full filter blur-3xl" />
 
           <div className="max-w-6xl mx-auto relative z-10">
             <FadeInSection>
-              <div className="mb-16 text-center">
-                <span className="text-cyan-400 font-mono text-sm tracking-wider">{'// My Approach'}</span>
-                <h2 className="text-5xl font-bold mt-4">How I Work</h2>
-                <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+              <div className="mb-10 sm:mb-12 md:mb-16 text-center">
+                <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// My Approach'}</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">How I Work</h2>
+                <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto">
                   Great software isn&apos;t just about writing code—it&apos;s about understanding problems deeply and building solutions that truly matter.
                 </p>
               </div>
             </FadeInSection>
 
             {/* Process Steps */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-10 sm:mb-12 md:mb-16">
               <FadeInSection delay={0.1}>
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className="relative bg-gray-900/50 border border-gray-800 p-8 rounded-lg backdrop-blur-sm group"
+                  className="relative bg-gray-900/50 border border-gray-800 p-6 sm:p-8 rounded-lg backdrop-blur-sm group"
                 >
                   {/* Step Number */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full flex items-center justify-center font-bold text-black text-lg shadow-lg shadow-cyan-400/20">
+                  <div className="absolute -top-3 sm:-top-4 -left-3 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full flex items-center justify-center font-bold text-black text-base sm:text-lg shadow-lg shadow-cyan-400/20">
                     01
                   </div>
 
                   {/* Icon */}
-                  <div className="text-5xl mb-4 mt-4">💡</div>
+                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4">💡</div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-3 text-cyan-400">Understand</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-cyan-400">Understand</h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 leading-relaxed text-sm">
+                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
                     Start with the business problem, not the technology. I dig deep to understand what users actually need and why it matters to them.
                   </p>
                 </motion.div>
@@ -696,21 +696,21 @@ export default function Home() {
               <FadeInSection delay={0.2}>
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className="relative bg-gray-900/50 border border-gray-800 p-8 rounded-lg backdrop-blur-sm group"
+                  className="relative bg-gray-900/50 border border-gray-800 p-6 sm:p-8 rounded-lg backdrop-blur-sm group"
                 >
                   {/* Step Number */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center font-bold text-black text-lg shadow-lg shadow-purple-400/20">
+                  <div className="absolute -top-3 sm:-top-4 -left-3 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center font-bold text-black text-base sm:text-lg shadow-lg shadow-purple-400/20">
                     02
                   </div>
 
                   {/* Icon */}
-                  <div className="text-5xl mb-4 mt-4">👥</div>
+                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4">👥</div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-3 text-purple-400">Empathize</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-purple-400">Empathize</h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 leading-relaxed text-sm">
+                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
                     Consider who will use the system and their daily challenges. Design with empathy for real people, not abstract &quot;users.&quot;
                   </p>
                 </motion.div>
@@ -719,21 +719,21 @@ export default function Home() {
               <FadeInSection delay={0.3}>
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className="relative bg-gray-900/50 border border-gray-800 p-8 rounded-lg backdrop-blur-sm group"
+                  className="relative bg-gray-900/50 border border-gray-800 p-6 sm:p-8 rounded-lg backdrop-blur-sm group"
                 >
                   {/* Step Number */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center font-bold text-black text-lg shadow-lg shadow-pink-400/20">
+                  <div className="absolute -top-3 sm:-top-4 -left-3 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center font-bold text-black text-base sm:text-lg shadow-lg shadow-pink-400/20">
                     03
                   </div>
 
                   {/* Icon */}
-                  <div className="text-5xl mb-4 mt-4">🔨</div>
+                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4">🔨</div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-3 text-pink-400">Build</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-pink-400">Build</h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 leading-relaxed text-sm">
+                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
                     Build with depth over shortcuts. Master fundamentals, write clean code, and create systems that are both technically sound and practical.
                   </p>
                 </motion.div>
@@ -742,23 +742,23 @@ export default function Home() {
               <FadeInSection delay={0.4}>
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className="relative bg-gray-900/50 border border-gray-800 p-8 rounded-lg backdrop-blur-sm group"
+                  className="relative bg-gray-900/50 border border-gray-800 p-6 sm:p-8 rounded-lg backdrop-blur-sm group"
                 >
                   {/* Step Number */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-cyan-400 to-purple-400 rounded-full flex items-center justify-center font-bold text-black text-lg shadow-lg shadow-cyan-400/20">
+                  <div className="absolute -top-3 sm:-top-4 -left-3 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-cyan-400 to-purple-400 rounded-full flex items-center justify-center font-bold text-black text-base sm:text-lg shadow-lg shadow-cyan-400/20">
                     04
                   </div>
 
                   {/* Icon */}
-                  <div className="text-5xl mb-4 mt-4">🔄</div>
+                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4">🔄</div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                     Iterate
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 leading-relaxed text-sm">
+                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
                     Refine based on real feedback and usage. Great software evolves through continuous improvement and learning.
                   </p>
                 </motion.div>
@@ -769,18 +769,18 @@ export default function Home() {
             <FadeInSection delay={0.5}>
               <motion.div
                 whileHover={{ scale: 1.01 }}
-                className="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 border border-gray-800 p-10 rounded-lg relative overflow-hidden"
+                className="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 border border-gray-800 p-6 sm:p-8 md:p-10 rounded-lg relative overflow-hidden"
               >
                 {/* Accent Corner */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-400/10 to-purple-400/10 blur-2xl" />
 
                 <div className="relative">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-1 h-8 bg-gradient-to-b from-cyan-400 to-purple-400" />
-                    <h3 className="text-2xl font-bold">Real Example: New Zion POS System</h3>
+                  <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                    <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-cyan-400 to-purple-400" />
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold">Real Example: New Zion POS System</h3>
                   </div>
 
-                  <div className="grid md:grid-cols-4 gap-6 text-sm">
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-xs sm:text-sm">
                     <div>
                       <div className="font-bold text-cyan-400 mb-2 flex items-center gap-2">
                         <span className="text-lg">01</span> Understand
@@ -824,46 +824,46 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-32 px-8 lg:px-16 bg-black relative overflow-hidden">
+        <section className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-16 bg-black relative overflow-hidden">
           {/* Background Elements */}
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full filter blur-3xl" />
           <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full filter blur-3xl" />
 
           <div className="max-w-7xl mx-auto relative z-10">
             <FadeInSection>
-              <div className="mb-16 text-center">
-                <span className="text-cyan-400 font-mono text-sm tracking-wider">{'// Testimonials'}</span>
-                <h2 className="text-5xl font-bold mt-4">What Others Say</h2>
-                <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+              <div className="mb-10 sm:mb-12 md:mb-16 text-center">
+                <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// Testimonials'}</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">What Others Say</h2>
+                <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto">
                   Feedback from colleagues, supervisors, and clients I&apos;ve worked with.
                 </p>
               </div>
             </FadeInSection>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {/* Testimonial 1 */}
               <FadeInSection delay={0.1}>
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="relative bg-gray-900/50 border border-gray-800 p-8 rounded-lg backdrop-blur-sm h-full flex flex-col"
+                  className="relative bg-gray-900/50 border border-gray-800 p-6 sm:p-8 rounded-lg backdrop-blur-sm h-full flex flex-col"
                 >
                   {/* Quote Icon */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full flex items-center justify-center shadow-lg shadow-cyan-400/20">
-                    <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute -top-3 sm:-top-4 -left-3 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full flex items-center justify-center shadow-lg shadow-cyan-400/20">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                     </svg>
                   </div>
 
                   {/* Quote */}
-                  <p className="text-gray-300 leading-relaxed mb-6 flex-grow italic mt-4">
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6 flex-grow italic mt-3 sm:mt-4">
                     &quot;Outstanding developer with a unique ability to understand both technical requirements and user needs. The POS system transformed our operations completely.&quot;
                   </p>
 
                   {/* Author */}
-                  <div className="border-t border-gray-800 pt-4">
-                    <div className="font-bold text-white">Toots Abella</div>
-                    <div className="text-sm text-cyan-400">Operations Manager</div>
-                    <div className="text-sm text-gray-500">New Zion LPG</div>
+                  <div className="border-t border-gray-800 pt-3 sm:pt-4">
+                    <div className="font-bold text-white text-sm sm:text-base">Toots Abella</div>
+                    <div className="text-xs sm:text-sm text-cyan-400">Operations Manager</div>
+                    <div className="text-xs sm:text-sm text-gray-500">New Zion LPG</div>
                   </div>
                 </motion.div>
               </FadeInSection>
@@ -872,25 +872,25 @@ export default function Home() {
               <FadeInSection delay={0.2}>
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="relative bg-gray-900/50 border border-gray-800 p-8 rounded-lg backdrop-blur-sm h-full flex flex-col"
+                  className="relative bg-gray-900/50 border border-gray-800 p-6 sm:p-8 rounded-lg backdrop-blur-sm h-full flex flex-col"
                 >
                   {/* Quote Icon */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-purple-400/20">
-                    <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute -top-3 sm:-top-4 -left-3 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-purple-400/20">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                     </svg>
                   </div>
 
                   {/* Quote */}
-                  <p className="text-gray-300 leading-relaxed mb-6 flex-grow italic mt-4">
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6 flex-grow italic mt-3 sm:mt-4">
                     &quot;A talented developer who brings fresh perspectives to problem-solving. His work on our dashboard system exceeded expectations and delivered real value.&quot;
                   </p>
 
                   {/* Author */}
-                  <div className="border-t border-gray-800 pt-4">
-                    <div className="font-bold text-white">Sai Maloles</div>
-                    <div className="text-sm text-purple-400">IT Dept Head</div>
-                    <div className="text-sm text-gray-500">X-Meta Technologies</div>
+                  <div className="border-t border-gray-800 pt-3 sm:pt-4">
+                    <div className="font-bold text-white text-sm sm:text-base">Sai Maloles</div>
+                    <div className="text-xs sm:text-sm text-purple-400">IT Dept Head</div>
+                    <div className="text-xs sm:text-sm text-gray-500">X-Meta Technologies</div>
                   </div>
                 </motion.div>
               </FadeInSection>
@@ -899,25 +899,25 @@ export default function Home() {
               <FadeInSection delay={0.3}>
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="relative bg-gray-900/50 border border-gray-800 p-8 rounded-lg backdrop-blur-sm h-full flex flex-col"
+                  className="relative bg-gray-900/50 border border-gray-800 p-6 sm:p-8 rounded-lg backdrop-blur-sm h-full flex flex-col"
                 >
                   {/* Quote Icon */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center shadow-lg shadow-pink-400/20">
-                    <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute -top-3 sm:-top-4 -left-3 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center shadow-lg shadow-pink-400/20">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                     </svg>
                   </div>
 
                   {/* Quote */}
-                  <p className="text-gray-300 leading-relaxed mb-6 flex-grow italic mt-4">
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6 flex-grow italic mt-3 sm:mt-4">
                     &quot;Exceptional attention to detail and genuine care for user experience. He doesn&apos;t just write code—he creates solutions that people actually want to use.&quot;
                   </p>
 
                   {/* Author */}
-                  <div className="border-t border-gray-800 pt-4">
-                    <div className="font-bold text-white">Yen Padlan</div>
-                    <div className="text-sm text-pink-400">CMO</div>
-                    <div className="text-sm text-gray-500">X-Meta Technologies</div>
+                  <div className="border-t border-gray-800 pt-3 sm:pt-4">
+                    <div className="font-bold text-white text-sm sm:text-base">Yen Padlan</div>
+                    <div className="text-xs sm:text-sm text-pink-400">CMO</div>
+                    <div className="text-xs sm:text-sm text-gray-500">X-Meta Technologies</div>
                   </div>
                 </motion.div>
               </FadeInSection>
@@ -926,16 +926,16 @@ export default function Home() {
         </section>
 
         {/* Experience - Timeline */}
-        <section id="work" className="py-32 px-8 lg:px-16 bg-gradient-to-b from-black to-gray-950">
+        <section id="work" className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-16 bg-gradient-to-b from-black to-gray-950">
           <div className="max-w-4xl mx-auto">
             <FadeInSection>
-              <div className="mb-16">
-                <span className="text-cyan-400 font-mono text-sm tracking-wider">{'// Career Path'}</span>
-                <h2 className="text-5xl font-bold mt-4">Experience</h2>
+              <div className="mb-10 sm:mb-12 md:mb-16">
+                <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// Career Path'}</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">Experience</h2>
               </div>
             </FadeInSection>
 
-            <div className="space-y-16 relative before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-gradient-to-b before:from-cyan-400 before:via-purple-400 before:to-pink-400">
+            <div className="space-y-10 sm:space-y-12 md:space-y-16 relative before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-gradient-to-b before:from-cyan-400 before:via-purple-400 before:to-pink-400">
               <FadeInSection delay={0.1}>
                 <WorkItem
                   year="2024"
@@ -960,17 +960,17 @@ export default function Home() {
         </section>
 
         {/* Contact Form Section */}
-        <section id="contact" className="py-32 px-8 lg:px-16 bg-black relative overflow-hidden">
+        <section id="contact" className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-16 bg-black relative overflow-hidden">
           {/* Background Elements */}
           <div className="absolute top-1/3 left-0 w-96 h-96 bg-cyan-500/5 rounded-full filter blur-3xl" />
           <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-pink-500/5 rounded-full filter blur-3xl" />
 
           <div className="max-w-4xl mx-auto relative z-10">
             <FadeInSection>
-              <div className="mb-16 text-center">
-                <span className="text-cyan-400 font-mono text-sm tracking-wider">{'// Get In Touch'}</span>
-                <h2 className="text-5xl font-bold mt-4">Let&apos;s Work Together</h2>
-                <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+              <div className="mb-10 sm:mb-12 md:mb-16 text-center">
+                <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// Get In Touch'}</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">Let&apos;s Work Together</h2>
+                <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto">
                   Have a project in mind or want to discuss opportunities? I&apos;d love to hear from you.
                 </p>
               </div>
@@ -1120,16 +1120,16 @@ export default function Home() {
         </section>
 
         {/* Footer - Minimal Contact */}
-        <footer className="border-t border-gray-900 py-16 px-8 lg:px-16">
+        <footer className="border-t border-gray-900 py-10 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <FadeInSection>
-              <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+              <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
                 <div>
-                  <h3 className="text-3xl font-bold mb-2">Let&apos;s Talk</h3>
-                  <p className="text-gray-500">Always open to new opportunities</p>
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-2">Let&apos;s Talk</h3>
+                  <p className="text-sm sm:text-base text-gray-500">Always open to new opportunities</p>
                 </div>
 
-                <div className="flex flex-wrap gap-8">
+                <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8">
                   <FooterLink href="mailto:your.email@example.com" label="Email" />
                   <FooterLink href="https://github.com" label="GitHub" />
                   <FooterLink href="https://linkedin.com" label="LinkedIn" />
@@ -1137,7 +1137,7 @@ export default function Home() {
                   <a
                     href="/resume.pdf"
                     download
-                    className="text-gray-500 hover:text-purple-400 transition-colors font-medium flex items-center gap-2"
+                    className="text-gray-500 hover:text-purple-400 transition-colors font-medium flex items-center gap-2 min-h-[44px]"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -1147,7 +1147,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-16 pt-8 border-t border-gray-900 text-sm text-gray-600 text-center lg:text-left">
+              <div className="mt-10 sm:mt-12 md:mt-16 pt-6 sm:pt-8 border-t border-gray-900 text-xs sm:text-sm text-gray-600 text-center lg:text-left">
                 <p>© {new Date().getFullYear()} — Designed & Built by You</p>
               </div>
             </FadeInSection>
@@ -1192,17 +1192,17 @@ function TechCategory({ title, items, accent }: { title: string; items: string[]
     <motion.div
       whileHover={{ scale: 1.02, y: -4 }}
       transition={{ duration: 0.2 }}
-      className={`group border ${accentColors[accent]} bg-gray-950 p-8 transition-all hover:bg-gray-900`}
+      className={`group border ${accentColors[accent]} bg-gray-950 p-6 sm:p-8 transition-all hover:bg-gray-900`}
     >
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
         <motion.div
           className={`w-2 h-2 rounded-full ${dotColors[accent]}`}
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         />
-        <h3 className="text-xl font-bold">{title}</h3>
+        <h3 className="text-lg sm:text-xl font-bold">{title}</h3>
       </div>
-      <ul className="space-y-3">
+      <ul className="space-y-2 sm:space-y-3">
         {items.map((item, index) => (
           <motion.li
             key={item}
@@ -1210,7 +1210,7 @@ function TechCategory({ title, items, accent }: { title: string; items: string[]
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="text-gray-400 flex items-center gap-2"
+            className="text-sm sm:text-base text-gray-400 flex items-center gap-2"
           >
             <span className="text-gray-600">→</span>
             {item}
@@ -1295,7 +1295,7 @@ function ProjectShowcase({
   }, [isLightboxOpen, hasMultipleImages, imageArray.length]);
 
   return (
-    <div className={`grid lg:grid-cols-2 gap-12 items-center ${direction === 'right' ? 'lg:direction-rtl' : ''}`}>
+    <div className={`grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center ${direction === 'right' ? 'lg:direction-rtl' : ''}`}>
       {/* Project Image Gallery */}
       <motion.div
         className="relative group"
@@ -1379,14 +1379,14 @@ function ProjectShowcase({
 
         {/* Thumbnail Gallery - Only show if multiple images */}
         {hasMultipleImages && (
-          <div className="mt-4 grid grid-cols-6 gap-2">
+          <div className="mt-3 sm:mt-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2">
             {imageArray.map((img, index) => (
               <motion.button
                 key={index}
                 onClick={() => goToImage(index)}
                 aria-label={`View image ${index + 1}`}
                 aria-current={currentImageIndex === index ? 'true' : 'false'}
-                className={`relative aspect-video rounded overflow-hidden border-2 transition-all ${
+                className={`relative aspect-video rounded overflow-hidden border-2 transition-all min-h-[44px] ${
                   currentImageIndex === index
                     ? 'border-cyan-400 ring-2 ring-cyan-400/50'
                     : 'border-gray-700 hover:border-gray-500'
@@ -1412,20 +1412,20 @@ function ProjectShowcase({
       </motion.div>
 
       {/* Project Info */}
-      <div className={`space-y-6 ${direction === 'right' ? 'lg:direction-ltr' : ''}`}>
+      <div className={`space-y-4 sm:space-y-5 md:space-y-6 ${direction === 'right' ? 'lg:direction-ltr' : ''}`}>
         <div>
-          <span className="text-cyan-400 font-mono text-sm">{'// Project'}</span>
-          <h3 className="text-3xl lg:text-4xl font-bold mt-2">{title}</h3>
+          <span className="text-cyan-400 font-mono text-xs sm:text-sm">{'// Project'}</span>
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2">{title}</h3>
         </div>
 
         <motion.div
           whileHover={{ scale: 1.01 }}
-          className="bg-gray-900 border border-gray-800 p-6 rounded-lg"
+          className="bg-gray-900 border border-gray-800 p-4 sm:p-5 md:p-6 rounded-lg"
         >
-          <p className="text-gray-300 leading-relaxed">{description}</p>
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed">{description}</p>
         </motion.div>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2 sm:gap-3">
           {tags.map((tag, index) => (
             <motion.span
               key={tag}
@@ -1434,19 +1434,19 @@ function ProjectShowcase({
               transition={{ delay: index * 0.05 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, y: -2 }}
-              className="px-4 py-2 text-sm font-mono border border-gray-800 text-gray-400"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-mono border border-gray-800 text-gray-400"
             >
               {tag}
             </motion.span>
           ))}
         </div>
 
-        <div className="flex gap-4 pt-2">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
           <motion.a
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors"
+            className="flex items-center justify-center sm:justify-start gap-2 text-cyan-400 hover:text-cyan-300 transition-colors min-h-[44px]"
             whileHover={{ x: 5 }}
           >
             <span>Live Demo</span>
@@ -1461,7 +1461,7 @@ function ProjectShowcase({
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-500 hover:text-gray-400 transition-colors"
+            className="flex items-center justify-center sm:justify-start gap-2 text-gray-500 hover:text-gray-400 transition-colors min-h-[44px]"
             whileHover={{ x: 5 }}
           >
             <span>GitHub</span>
@@ -1576,24 +1576,24 @@ function ProjectShowcase({
               )}
             </motion.div>
 
-            {/* Keyboard Hints */}
+            {/* Keyboard Hints - Hidden on mobile */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ delay: 0.2 }}
-              className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[10001] bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-white text-sm font-mono flex items-center gap-6"
+              className="hidden sm:flex absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-[10001] bg-white/10 backdrop-blur-md px-4 sm:px-6 py-2 sm:py-3 rounded-full text-white text-xs sm:text-sm font-mono items-center gap-3 sm:gap-6"
             >
               <span className="flex items-center gap-2">
                 <kbd className="px-2 py-1 bg-white/20 rounded text-xs">ESC</kbd>
-                Close
+                <span className="hidden sm:inline">Close</span>
               </span>
               {hasMultipleImages && (
                 <>
                   <span className="flex items-center gap-2">
                     <kbd className="px-2 py-1 bg-white/20 rounded text-xs">←</kbd>
                     <kbd className="px-2 py-1 bg-white/20 rounded text-xs">→</kbd>
-                    Navigate
+                    <span className="hidden sm:inline">Navigate</span>
                   </span>
                 </>
               )}
@@ -1615,22 +1615,22 @@ function WorkItem({ year, title, company, description, tags }: {
   return (
     <motion.div
       whileHover={{ x: 4 }}
-      className="pl-12 relative group"
+      className="pl-8 sm:pl-10 md:pl-12 relative group"
     >
       <motion.div
-        className="absolute left-0 top-2 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-black group-hover:ring-cyan-400/20 transition-all"
+        className="absolute left-0 top-1 sm:top-2 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-cyan-400 ring-4 ring-black group-hover:ring-cyan-400/20 transition-all"
         whileHover={{ scale: 1.3 }}
       />
 
-      <div className="space-y-3">
-        <div className="flex items-center gap-4">
-          <span className="font-mono text-sm text-gray-600">{year}</span>
+      <div className="space-y-2 sm:space-y-3">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <span className="font-mono text-xs sm:text-sm text-gray-600">{year}</span>
           <div className="h-px flex-1 bg-gray-900" />
         </div>
 
-        <h3 className="text-2xl font-bold">{title}</h3>
-        <p className="text-cyan-400 font-medium">{company}</p>
-        <p className="text-gray-400 leading-relaxed">{description}</p>
+        <h3 className="text-xl sm:text-2xl font-bold">{title}</h3>
+        <p className="text-sm sm:text-base text-cyan-400 font-medium">{company}</p>
+        <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{description}</p>
 
         <div className="flex flex-wrap gap-2 pt-2">
           {tags.map((tag, index) => (
@@ -1640,7 +1640,7 @@ function WorkItem({ year, title, company, description, tags }: {
               whileInView={{ opacity: 1 }}
               transition={{ delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="px-3 py-1 text-xs border border-gray-800 text-gray-500 font-mono"
+              className="px-2.5 sm:px-3 py-1 text-xs border border-gray-800 text-gray-500 font-mono"
             >
               {tag}
             </motion.span>
@@ -1657,7 +1657,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-gray-500 hover:text-cyan-400 transition-colors font-medium"
+      className="text-gray-500 hover:text-cyan-400 transition-colors font-medium text-sm sm:text-base min-h-[44px] flex items-center"
       whileHover={{ y: -2 }}
     >
       {label}
