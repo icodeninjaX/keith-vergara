@@ -14,7 +14,7 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Full-Stack Web Developer | PHP, JavaScript, MySQL Portfolio",
+  title: "Keith Vergara Portfolio",
   description: "Full-stack developer building web applications that solve real business problems. Specializing in PHP, MySQL, JavaScript, and creating user-focused solutions that blend technical architecture with human needs.",
   keywords: [
     "full-stack developer",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     "frontend development",
     "backend development",
   ],
-  authors: [{ name: "Portfolio Developer" }],
-  creator: "Portfolio Developer",
-  publisher: "Portfolio Developer",
+  authors: [{ name: "Keith Vergara" }],
+  creator: "Keith Vergara",
+  publisher: "Keith Vergara",
   formatDetection: {
     email: false,
     address: false,
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://yourportfolio.com",
-    siteName: "Full-Stack Developer Portfolio",
-    title: "Full-Stack Web Developer | Problem-Solving & User-Focused Solutions",
+    siteName: "Keith Vergara Portfolio",
+    title: "Keith Vergara | Full-Stack Web Developer",
     description: "Building web applications that solve real business problems by understanding both technical architecture and human needs. Specializing in PHP, MySQL, JavaScript, and modern web technologies.",
     images: [
       {
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Full-Stack Web Developer | Problem-Solving & User-Focused Solutions",
+    title: "Keith Vergara Portfolio",
     description: "Building web applications that solve real business problems. Specializing in PHP, MySQL, JavaScript, and creating user-focused solutions.",
     images: ["/og-image.png"],
   },

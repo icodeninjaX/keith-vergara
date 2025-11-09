@@ -295,7 +295,7 @@ export default function Home() {
                 >
                   <span className="block">Building</span>
                   <span className="block mt-2 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    Experiences
+                    Solutions
                   </span>
                 </motion.h1>
 
@@ -580,7 +580,15 @@ export default function Home() {
                   title="Device Monitoring & Food Order Dashboard"
                   description="A real-time backend dashboard system for monitoring devices and tracking food orders across multiple locations. Features live device status updates, order management, and comprehensive data visualization for business intelligence. Built to handle concurrent operations and provide instant insights for operational decision-making."
                   tags={['PHP', 'MySQL', 'JavaScript', 'AJAX', 'Bootstrap', 'Real-time Updates']}
-                  imageUrl="/xmeta/dashboard-placeholder.png"
+                  images={[
+                    '/device-monitoring-dashboard/Screenshot 2025-11-09 164737.png',
+                    '/device-monitoring-dashboard/Screenshot 2025-11-09 164838.png',
+                    '/device-monitoring-dashboard/Screenshot 2025-11-09 164919.png',
+                    '/device-monitoring-dashboard/Screenshot 2025-11-09 165111.png',
+                    '/device-monitoring-dashboard/Screenshot 2025-11-09 171008.png',
+                    '/device-monitoring-dashboard/Screenshot 2025-11-09 171040.png',
+                    '/device-monitoring-dashboard/Screenshot 2025-11-09 171250.png',
+                  ]}
                   direction="left"
                   liveUrl="#"
                   githubUrl="#"
@@ -592,7 +600,9 @@ export default function Home() {
                   title="Ads Booking System with Budget Calculator"
                   description="An integrated advertising management platform featuring a sophisticated budget calculator that helps clients determine optimal advertising spend and ROI. The system streamlines the booking process while providing cost optimization recommendations and real-time budget analysis. Empowers clients to make data-driven decisions about their advertising investments."
                   tags={['PHP', 'MySQL', 'JavaScript', 'Bootstrap', 'Budget Analytics', 'Client Portal']}
-                  imageUrl="/xmeta/ads-placeholder.png"
+                  images={[
+                    '/ads-booking-system/Screenshot 2025-11-09 171151.png',
+                  ]}
                   direction="right"
                   liveUrl="#"
                   githubUrl="#"
@@ -604,7 +614,11 @@ export default function Home() {
                   title="Multi-Branch Location & Usage Map"
                   description="An interactive mapping solution that visualizes device locations and mobile data usage across multiple branches in real-time. Leverages Leaflet and Google Maps API to transform complex location and usage data into clear, actionable insights. Enables management to monitor operations across all branches at a glance and make informed decisions about resource allocation and network optimization."
                   tags={['JavaScript', 'Leaflet', 'Google Maps API', 'PHP', 'MySQL', 'Real-time Tracking', 'Data Visualization']}
-                  imageUrl="/xmeta/map-placeholder.png"
+                  images={[
+                    '/multi-branch-map/Screenshot 2025-11-09 170254.png',
+                    '/multi-branch-map/Screenshot 2025-11-09 170333.png',
+                    '/multi-branch-map/Screenshot 2025-11-09 170906.png',
+                  ]}
                   direction="left"
                   liveUrl="#"
                   githubUrl="#"
@@ -847,7 +861,7 @@ export default function Home() {
 
                   {/* Author */}
                   <div className="border-t border-gray-800 pt-4">
-                    <div className="font-bold text-white">John Smith</div>
+                    <div className="font-bold text-white">Toots Abella</div>
                     <div className="text-sm text-cyan-400">Operations Manager</div>
                     <div className="text-sm text-gray-500">New Zion LPG</div>
                   </div>
@@ -874,8 +888,8 @@ export default function Home() {
 
                   {/* Author */}
                   <div className="border-t border-gray-800 pt-4">
-                    <div className="font-bold text-white">Sarah Johnson</div>
-                    <div className="text-sm text-purple-400">Technical Lead</div>
+                    <div className="font-bold text-white">Sai Maloles</div>
+                    <div className="text-sm text-purple-400">IT Dept Head</div>
                     <div className="text-sm text-gray-500">X-Meta Technologies</div>
                   </div>
                 </motion.div>
@@ -901,22 +915,13 @@ export default function Home() {
 
                   {/* Author */}
                   <div className="border-t border-gray-800 pt-4">
-                    <div className="font-bold text-white">Michael Chen</div>
-                    <div className="text-sm text-pink-400">Senior Developer</div>
+                    <div className="font-bold text-white">Yen Padlan</div>
+                    <div className="text-sm text-pink-400">CMO</div>
                     <div className="text-sm text-gray-500">X-Meta Technologies</div>
                   </div>
                 </motion.div>
               </FadeInSection>
             </div>
-
-            {/* Note for replacing with real testimonials */}
-            <FadeInSection delay={0.4}>
-              <div className="mt-12 text-center">
-                <p className="text-sm text-gray-600 italic">
-                  Note: Replace these placeholder testimonials with actual recommendations from colleagues, supervisors, or clients.
-                </p>
-              </div>
-            </FadeInSection>
           </div>
         </section>
 
