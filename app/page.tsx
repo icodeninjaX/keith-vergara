@@ -115,7 +115,7 @@ export default function Home() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-80 bg-gray-950 border-l border-gray-800 z-[56] lg:hidden overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-[85vw] max-w-sm bg-gray-950 border-l border-gray-800 z-[56] lg:hidden overflow-y-auto"
             >
               <div className="p-8 pt-24">
                 {/* Menu Title */}
@@ -291,7 +291,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-none"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none"
                 >
                   <span className="block">Building</span>
                   <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
@@ -968,7 +968,7 @@ export default function Home() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg text-white focus:border-cyan-400 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg text-white text-sm sm:text-base focus:border-cyan-400 focus:outline-none transition-colors"
                       placeholder="Your name"
                     />
                   </div>
@@ -985,7 +985,7 @@ export default function Home() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg text-white focus:border-cyan-400 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg text-white text-sm sm:text-base focus:border-cyan-400 focus:outline-none transition-colors"
                       placeholder="you@company.com"
                     />
                   </div>
@@ -1002,7 +1002,7 @@ export default function Home() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg text-white focus:border-cyan-400 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg text-white text-sm sm:text-base focus:border-cyan-400 focus:outline-none transition-colors"
                     placeholder="What's on your mind?"
                   />
                 </div>
@@ -1019,7 +1019,7 @@ export default function Home() {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg text-white focus:border-cyan-400 focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg text-white text-sm sm:text-base focus:border-cyan-400 focus:outline-none transition-colors resize-none"
                     placeholder="Share your idea, project details, or just say hi..."
                   />
                 </div>
@@ -1331,7 +1331,7 @@ function ProjectShowcase({
             initial={{ opacity: 0 }}
             whileHover={{ opacity: 1 }}
           >
-            <div className="bg-black/70 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-mono opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="bg-black/70 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-2 rounded-full text-white text-xs sm:text-sm font-mono opacity-0 group-hover:opacity-100 transition-opacity">
               Tap to view fullscreen
             </div>
           </motion.div>
@@ -1370,7 +1370,7 @@ function ProjectShowcase({
               </motion.button>
 
               {/* Image Counter */}
-              <div className="absolute top-4 right-4 z-20 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-white font-mono">
+              <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-20 bg-black/50 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm text-white font-mono">
                 {currentImageIndex + 1} / {imageArray.length}
               </div>
             </>
@@ -1428,7 +1428,7 @@ function ProjectShowcase({
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ delay: 0.1 }}
             onClick={closeFullscreen}
-            className="absolute top-4 right-4 z-[110] bg-black/50 hover:bg-black/70 text-white p-3 rounded-full backdrop-blur-sm transition-all"
+            className="absolute top-2 right-2 sm:top-4 sm:right-4 z-[110] bg-black/50 hover:bg-black/70 text-white p-4 sm:p-3 rounded-full backdrop-blur-sm transition-all"
             aria-label="Close fullscreen"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1466,7 +1466,7 @@ function ProjectShowcase({
                     prevImage();
                   }}
                   aria-label="Previous image"
-                  className="absolute left-4 top-1/2 -translate-y-1/2 z-[105] bg-black/70 hover:bg-black/90 text-white p-4 rounded-full backdrop-blur-sm transition-all"
+                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-[105] bg-black/70 hover:bg-black/90 text-white p-3 sm:p-4 rounded-full backdrop-blur-sm transition-all"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -1481,7 +1481,7 @@ function ProjectShowcase({
                     nextImage();
                   }}
                   aria-label="Next image"
-                  className="absolute right-4 top-1/2 -translate-y-1/2 z-[105] bg-black/70 hover:bg-black/90 text-white p-4 rounded-full backdrop-blur-sm transition-all"
+                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-[105] bg-black/70 hover:bg-black/90 text-white p-3 sm:p-4 rounded-full backdrop-blur-sm transition-all"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -1491,7 +1491,7 @@ function ProjectShowcase({
                 </motion.button>
 
                 {/* Image Counter for Fullscreen */}
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[105] bg-black/70 backdrop-blur-sm px-6 py-3 rounded-full text-white font-mono">
+                <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-[105] bg-black/70 backdrop-blur-sm px-4 py-2 sm:px-6 sm:py-3 rounded-full text-white text-sm sm:text-base font-mono">
                   {currentImageIndex + 1} / {imageArray.length}
                 </div>
 
@@ -1512,9 +1512,9 @@ function ProjectShowcase({
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="absolute top-4 left-4 z-[105] bg-black/70 backdrop-blur-sm px-6 py-3 rounded-full text-white font-mono"
+              className="absolute top-2 sm:top-4 left-2 sm:left-4 z-[105] bg-black/70 backdrop-blur-sm px-3 py-2 sm:px-6 sm:py-3 rounded-full text-white font-mono max-w-[calc(100vw-8rem)]"
             >
-              <span className="text-sm">{title}</span>
+              <span className="text-xs sm:text-sm truncate block">{title}</span>
             </motion.div>
           </motion.div>
         </motion.div>
