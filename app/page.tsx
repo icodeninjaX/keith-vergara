@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
@@ -1227,7 +1227,6 @@ function ProjectShowcase({
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   // Blur placeholder for loading states
   const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxMTE4MjciLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzBjMTAxYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzExMTgyNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNDc1IiBmaWxsPSJ1cmwoI2cpIi8+PC9zdmc+";
@@ -1245,39 +1244,6 @@ function ProjectShowcase({
     setCurrentImageIndex((prev) => (prev - 1 + imageArray.length) % imageArray.length);
   };
 
-  const goToImage = (index: number) => {
-    setCurrentImageIndex(index);
-  };
-
-  const openLightbox = () => {
-    setIsLightboxOpen(true);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeLightbox = () => {
-    setIsLightboxOpen(false);
-    document.body.style.overflow = 'unset';
-  };
-
-  // Handle ESC key to close lightbox and arrow keys for navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isLightboxOpen) {
-        closeLightbox();
-      }
-      if (isLightboxOpen && hasMultipleImages) {
-        if (e.key === 'ArrowRight') {
-          setCurrentImageIndex((prev) => (prev + 1) % imageArray.length);
-        }
-        if (e.key === 'ArrowLeft') {
-          setCurrentImageIndex((prev) => (prev - 1 + imageArray.length) % imageArray.length);
-        }
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isLightboxOpen, hasMultipleImages, imageArray.length]);
 
   return (
     <div className={`grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center ${direction === 'right' ? 'lg:direction-rtl' : ''}`}>
@@ -1297,8 +1263,7 @@ function ProjectShowcase({
 
         {/* Main Image Display */}
         <div
-          className="relative aspect-video bg-gray-900 border border-gray-800 rounded-lg overflow-hidden cursor-pointer"
-          onClick={openLightbox}
+          className="relative aspect-video bg-gray-900 border border-gray-800 rounded-lg overflow-hidden"
         >
           <Image
             src={currentImage}
@@ -1309,26 +1274,11 @@ function ProjectShowcase({
             blurDataURL={blurDataURL}
             key={currentImageIndex}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-
-          {/* Click to Enlarge Indicator */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-            <div className="bg-black/70 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-              </svg>
-              <span className="text-white text-sm font-medium">Click to enlarge</span>
-            </div>
-          </div>
-
           {/* Navigation Arrows - Only show if multiple images */}
           {hasMultipleImages && (
             <>
               <motion.button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  prevImage();
-                }}
+                onClick={prevImage}
                 aria-label="Previous image"
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
                 whileHover={{ scale: 1.1 }}
@@ -1340,10 +1290,7 @@ function ProjectShowcase({
               </motion.button>
 
               <motion.button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  nextImage();
-                }}
+                onClick={nextImage}
                 aria-label="Next image"
                 className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
                 whileHover={{ scale: 1.1 }}
@@ -1361,39 +1308,6 @@ function ProjectShowcase({
             </>
           )}
         </div>
-
-        {/* Thumbnail Gallery - Only show if multiple images */}
-        {hasMultipleImages && (
-          <div className="mt-3 sm:mt-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2">
-            {imageArray.map((img, index) => (
-              <motion.button
-                key={index}
-                onClick={() => goToImage(index)}
-                aria-label={`View image ${index + 1}`}
-                aria-current={currentImageIndex === index ? 'true' : 'false'}
-                className={`relative aspect-video rounded overflow-hidden border-2 transition-all min-h-[44px] ${
-                  currentImageIndex === index
-                    ? 'border-cyan-400 ring-2 ring-cyan-400/50'
-                    : 'border-gray-700 hover:border-gray-500'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Image
-                  src={img}
-                  alt={`Thumbnail ${index + 1}`}
-                  fill
-                  className="object-cover object-top"
-                  placeholder="blur"
-                  blurDataURL={blurDataURL}
-                />
-                {currentImageIndex !== index && (
-                  <div className="absolute inset-0 bg-black/40" />
-                )}
-              </motion.button>
-            ))}
-          </div>
-        )}
       </motion.div>
 
       {/* Project Info */}
@@ -1425,167 +1339,7 @@ function ProjectShowcase({
             </motion.span>
           ))}
         </div>
-
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
-          <motion.a
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center sm:justify-start gap-2 text-cyan-400 hover:text-cyan-300 transition-colors min-h-[44px]"
-            whileHover={{ x: 5 }}
-          >
-            <span>Live Demo</span>
-            <motion.span
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              →
-            </motion.span>
-          </motion.a>
-          <motion.a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center sm:justify-start gap-2 text-gray-500 hover:text-gray-400 transition-colors min-h-[44px]"
-            whileHover={{ x: 5 }}
-          >
-            <span>GitHub</span>
-            <span>→</span>
-          </motion.a>
-        </div>
       </div>
-
-      {/* Lightbox Modal */}
-      <AnimatePresence>
-        {isLightboxOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm"
-            onClick={closeLightbox}
-          >
-            {/* Close Button */}
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ delay: 0.1 }}
-              onClick={closeLightbox}
-              aria-label="Close lightbox"
-              className="absolute top-6 right-6 z-[10001] bg-white/10 hover:bg-white/20 text-white p-3 rounded-full backdrop-blur-md transition-all group"
-              whileHover={{ scale: 1.1, rotate: 90 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </motion.button>
-
-            {/* Image Counter */}
-            {hasMultipleImages && (
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ delay: 0.1 }}
-                className="absolute top-6 left-6 z-[10001] bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white font-mono"
-              >
-                {currentImageIndex + 1} / {imageArray.length}
-              </motion.div>
-            )}
-
-            {/* Main Image Container */}
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="relative w-full h-full flex items-center justify-center">
-                <Image
-                  src={currentImage}
-                  alt={`${title} - Screenshot ${currentImageIndex + 1}`}
-                  fill
-                  className="object-contain"
-                  placeholder="blur"
-                  blurDataURL={blurDataURL}
-                  key={`lightbox-${currentImageIndex}`}
-                />
-              </div>
-
-              {/* Navigation Arrows for Multiple Images */}
-              {hasMultipleImages && (
-                <>
-                  <motion.button
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ delay: 0.2 }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      prevImage();
-                    }}
-                    aria-label="Previous image"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full backdrop-blur-md transition-all"
-                    whileHover={{ scale: 1.1, x: -4 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </motion.button>
-
-                  <motion.button
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 20 }}
-                    transition={{ delay: 0.2 }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      nextImage();
-                    }}
-                    aria-label="Next image"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full backdrop-blur-md transition-all"
-                    whileHover={{ scale: 1.1, x: 4 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </motion.button>
-                </>
-              )}
-            </motion.div>
-
-            {/* Keyboard Hints - Hidden on mobile */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ delay: 0.2 }}
-              className="hidden sm:flex absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-[10001] bg-white/10 backdrop-blur-md px-4 sm:px-6 py-2 sm:py-3 rounded-full text-white text-xs sm:text-sm font-mono items-center gap-3 sm:gap-6"
-            >
-              <span className="flex items-center gap-2">
-                <kbd className="px-2 py-1 bg-white/20 rounded text-xs">ESC</kbd>
-                <span className="hidden sm:inline">Close</span>
-              </span>
-              {hasMultipleImages && (
-                <>
-                  <span className="flex items-center gap-2">
-                    <kbd className="px-2 py-1 bg-white/20 rounded text-xs">←</kbd>
-                    <kbd className="px-2 py-1 bg-white/20 rounded text-xs">→</kbd>
-                    <span className="hidden sm:inline">Navigate</span>
-                  </span>
-                </>
-              )}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }
