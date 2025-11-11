@@ -116,7 +116,18 @@ portfolio-app/
    - Already documented in the portfolio
    - Comprehensive business management system for LPG distribution
 
-### 5. Work Experience Section
+### 5. How I Work Section
+- Four-step process cards showcasing development approach
+- Centered layout with emoji, title, and description
+- Cards feature:
+  - Numbered badges (01-04) with gradient colors
+  - Animated hover effects (lift and scale)
+  - Color-coded titles: Understand (cyan), Empathize (purple), Build (pink), Iterate (gradient)
+  - Centered text alignment for clean, balanced appearance
+- Real-world example showcase demonstrating the process in action
+- No subtitle/description under main heading for cleaner look
+
+### 6. Work Experience Section
 - Timeline-style layout
 - Vertical gradient line indicator
 - Animated dots marking each position
@@ -136,7 +147,21 @@ portfolio-app/
     - Created customer management, inventory tracking, and automated notification features
     - Achieved 70% faster order processing and 50% reduction in errors by digitizing manual operations
 
-### 6. Footer
+### 7. Testimonials Section
+- Three testimonial cards with quotes from colleagues and supervisors
+- Gradient-colored quote icons (cyan, purple, pink)
+- Hover animations for interactive feel
+- Author information with role and company
+- Justified text alignment for professional appearance
+
+### 8. Contact Form Section
+- Modern contact form with name, email, subject, and message fields
+- FormSpree integration for form submission
+- Form validation and status feedback
+- Animated form elements with focus states
+- Responsive design for all screen sizes
+
+### 9. Footer
 - Contact section with social links
 - Placeholder links for Email, GitHub, LinkedIn, Twitter
 - Copyright notice with dynamic year
@@ -171,6 +196,9 @@ portfolio-app/
   - Font Mono for code-style elements and labels
   - Large, bold headings (text-5xl to text-8xl)
   - Consistent use of gray-400 for body text
+  - **Text Alignment**:
+    - Justified text (`text-justify`) for all paragraph content throughout the portfolio for a professional, polished look
+    - Centered text (`text-center`) for "How I Work" process cards (emoji, title, and description) for balanced presentation
 
 - **Layout**:
   - Max-width container: 7xl (max-w-7xl)
@@ -217,6 +245,24 @@ npm start
 npm run lint
 ```
 
+## Recent Updates
+
+### Text Alignment Improvements (Latest)
+- **Global Text Justification**: Applied `text-justify` to all paragraph content throughout the portfolio for a professional, polished appearance
+  - Hero section intro paragraph
+  - About Me section (all paragraphs in philosophy cards and main content)
+  - How I Work section case study descriptions
+  - Testimonials section quotes
+  - Contact section header description
+  - Project descriptions (ProjectShowcase component)
+  - Work experience descriptions (WorkItem component)
+
+- **How I Work Section Refinement**:
+  - Removed subtitle text under "How I Work" heading for cleaner presentation
+  - Changed all 4 process cards (Understand, Empathize, Build, Iterate) to center-aligned text
+  - Centered card emojis and titles for balanced, professional look
+  - Result: Cards have consistent, centered layout that's easier to read and more visually appealing
+
 ## Important Notes
 
 - This is a client-side rendered app (`'use client'` directive)
@@ -235,10 +281,11 @@ npm run lint
 
 ## Git Status
 
-Current branch: `master`
-Modified files: `app/page.tsx`
+Current branch: `main`
+Modified files:
+- `app/page.tsx` - Updated text alignment (justified paragraphs, centered "How I Work" cards)
+- `CLAUDE.md` - Updated documentation to reflect recent changes
 
 ## Deployment
 
-Currently configured for Vercel deployment. Recent commit:
-- "Fix Vercel deployment configuration" (d1a2359)
+Currently configured for Vercel deployment.

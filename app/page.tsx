@@ -677,11 +677,8 @@ export default function Home() {
                     01
                   </div>
 
-                  {/* Icon */}
-                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4 text-center">💡</div>
-
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-cyan-400 text-center">Understand</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-cyan-400 text-center mt-3 sm:mt-4">Understand</h3>
 
                   {/* Description */}
                   <p className="text-gray-400 leading-relaxed text-xs sm:text-sm text-center">
@@ -700,11 +697,8 @@ export default function Home() {
                     02
                   </div>
 
-                  {/* Icon */}
-                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4 text-center">👥</div>
-
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-purple-400 text-center">Empathize</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-purple-400 text-center mt-3 sm:mt-4">Empathize</h3>
 
                   {/* Description */}
                   <p className="text-gray-400 leading-relaxed text-xs sm:text-sm text-center">
@@ -723,11 +717,8 @@ export default function Home() {
                     03
                   </div>
 
-                  {/* Icon */}
-                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4 text-center">🔨</div>
-
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-pink-400 text-center">Build</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-pink-400 text-center mt-3 sm:mt-4">Build</h3>
 
                   {/* Description */}
                   <p className="text-gray-400 leading-relaxed text-xs sm:text-sm text-center">
@@ -746,11 +737,8 @@ export default function Home() {
                     04
                   </div>
 
-                  {/* Icon */}
-                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4 text-center">🔄</div>
-
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent text-center">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent text-center mt-3 sm:mt-4">
                     Iterate
                   </h3>
 
