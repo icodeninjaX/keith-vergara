@@ -303,7 +303,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-base sm:text-lg md:text-xl text-gray-400 max-w-lg leading-relaxed"
+                  className="text-base sm:text-lg md:text-xl text-gray-400 max-w-lg leading-relaxed text-justify"
                 >
                   I build web applications that solve real business problems by understanding both the technical architecture and the people who use them. My background in hardware repair and interest in human behavior helps me create solutions that are genuinely useful, not just technically sound.
                 </motion.p>
@@ -419,7 +419,7 @@ export default function Home() {
                       />
                       <h3 className="text-lg sm:text-xl font-bold text-cyan-400">Dual Perspective</h3>
                     </div>
-                    <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-400 leading-relaxed text-justify">
                       My background spans both <span className="text-white font-medium">software development</span> and <span className="text-white font-medium">hardware repair</span>. This unique combination gives me a deeper understanding of how systems work—not just in code, but in the real world where things can break, users get frustrated, and solutions need to be both technically sound and practically useful.
                     </p>
                   </motion.div>
@@ -437,7 +437,7 @@ export default function Home() {
                       />
                       <h3 className="text-lg sm:text-xl font-bold text-purple-400">Understanding People</h3>
                     </div>
-                    <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-400 leading-relaxed text-justify">
                       I&apos;m fascinated by <span className="text-white font-medium">psychology and human behavior</span>. This interest shapes how I approach development—I don&apos;t just ask &quot;how do I build this?&quot; but also <span className="text-white font-medium">&quot;why does it matter?&quot;</span> and <span className="text-white font-medium">&quot;who will this help?&quot;</span> Great software isn&apos;t just about elegant code; it&apos;s about understanding the people who use it.
                     </p>
                   </motion.div>
@@ -457,7 +457,7 @@ export default function Home() {
                     <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                       My Development Philosophy
                     </h3>
-                    <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed">
+                    <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed text-justify">
                       <p>
                         I believe great development isn&apos;t just about writing code—it&apos;s about <span className="text-white font-medium">understanding both the technical architecture and the human needs</span> behind every project.
                       </p>
@@ -662,9 +662,6 @@ export default function Home() {
               <div className="mb-10 sm:mb-12 md:mb-16 text-center">
                 <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// My Approach'}</span>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">How I Work</h2>
-                <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto">
-                  Great software isn&apos;t just about writing code—it&apos;s about understanding problems deeply and building solutions that truly matter.
-                </p>
               </div>
             </FadeInSection>
 
@@ -681,13 +678,13 @@ export default function Home() {
                   </div>
 
                   {/* Icon */}
-                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4">💡</div>
+                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4 text-center">💡</div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-cyan-400">Understand</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-cyan-400 text-center">Understand</h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
+                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm text-center">
                     Start with the business problem, not the technology. I dig deep to understand what users actually need and why it matters to them.
                   </p>
                 </motion.div>
@@ -704,13 +701,13 @@ export default function Home() {
                   </div>
 
                   {/* Icon */}
-                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4">👥</div>
+                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4 text-center">👥</div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-purple-400">Empathize</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-purple-400 text-center">Empathize</h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
+                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm text-center">
                     Consider who will use the system and their daily challenges. Design with empathy for real people, not abstract &quot;users.&quot;
                   </p>
                 </motion.div>
@@ -727,13 +724,13 @@ export default function Home() {
                   </div>
 
                   {/* Icon */}
-                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4">🔨</div>
+                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4 text-center">🔨</div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-pink-400">Build</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-pink-400 text-center">Build</h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
+                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm text-center">
                     Build with depth over shortcuts. Master fundamentals, write clean code, and create systems that are both technically sound and practical.
                   </p>
                 </motion.div>
@@ -750,15 +747,15 @@ export default function Home() {
                   </div>
 
                   {/* Icon */}
-                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4">🔄</div>
+                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 mt-3 sm:mt-4 text-center">🔄</div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent text-center">
                     Iterate
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
+                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm text-center">
                     Refine based on real feedback and usage. Great software evolves through continuous improvement and learning.
                   </p>
                 </motion.div>
@@ -785,7 +782,7 @@ export default function Home() {
                       <div className="font-bold text-cyan-400 mb-2 flex items-center gap-2">
                         <span className="text-lg">01</span> Understand
                       </div>
-                      <p className="text-gray-400 leading-relaxed">
+                      <p className="text-gray-400 leading-relaxed text-justify">
                         LPG distribution relied on manual processes causing errors and delays across two branches. The real problem wasn&apos;t lack of technology—it was inefficient communication and tracking.
                       </p>
                     </div>
@@ -794,7 +791,7 @@ export default function Home() {
                       <div className="font-bold text-purple-400 mb-2 flex items-center gap-2">
                         <span className="text-lg">02</span> Empathize
                       </div>
-                      <p className="text-gray-400 leading-relaxed">
+                      <p className="text-gray-400 leading-relaxed text-justify">
                         Staff needed quick order processing under pressure. Customers wanted transparency. Management needed reliable data for decisions—not just another dashboard.
                       </p>
                     </div>
@@ -803,7 +800,7 @@ export default function Home() {
                       <div className="font-bold text-pink-400 mb-2 flex items-center gap-2">
                         <span className="text-lg">03</span> Build
                       </div>
-                      <p className="text-gray-400 leading-relaxed">
+                      <p className="text-gray-400 leading-relaxed text-justify">
                         Built a comprehensive POS with SMS notifications for branch communication, real-time inventory tracking, and customer management—all integrated seamlessly.
                       </p>
                     </div>
@@ -812,7 +809,7 @@ export default function Home() {
                       <div className="font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2 flex items-center gap-2">
                         <span className="text-lg">04</span> Iterate
                       </div>
-                      <p className="text-gray-400 leading-relaxed">
+                      <p className="text-gray-400 leading-relaxed text-justify">
                         Result: 70% faster processing, 50% fewer errors. Continuous refinements based on daily operations made it truly indispensable.
                       </p>
                     </div>
@@ -834,7 +831,7 @@ export default function Home() {
               <div className="mb-10 sm:mb-12 md:mb-16 text-center">
                 <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// Testimonials'}</span>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">What Others Say</h2>
-                <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto text-justify">
                   Feedback from colleagues, supervisors, and clients I&apos;ve worked with.
                 </p>
               </div>
@@ -855,7 +852,7 @@ export default function Home() {
                   </div>
 
                   {/* Quote */}
-                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6 flex-grow italic mt-3 sm:mt-4">
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6 flex-grow italic mt-3 sm:mt-4 text-justify">
                     &quot;Outstanding developer with a unique ability to understand both technical requirements and user needs. The POS system transformed our operations completely.&quot;
                   </p>
 
@@ -882,7 +879,7 @@ export default function Home() {
                   </div>
 
                   {/* Quote */}
-                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6 flex-grow italic mt-3 sm:mt-4">
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6 flex-grow italic mt-3 sm:mt-4 text-justify">
                     &quot;A talented developer who brings fresh perspectives to problem-solving. His work on our dashboard system exceeded expectations and delivered real value.&quot;
                   </p>
 
@@ -909,7 +906,7 @@ export default function Home() {
                   </div>
 
                   {/* Quote */}
-                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6 flex-grow italic mt-3 sm:mt-4">
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6 flex-grow italic mt-3 sm:mt-4 text-justify">
                     &quot;Exceptional attention to detail and genuine care for user experience. He doesn&apos;t just write code—he creates solutions that people actually want to use.&quot;
                   </p>
 
@@ -970,7 +967,7 @@ export default function Home() {
               <div className="mb-10 sm:mb-12 md:mb-16 text-center">
                 <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// Get In Touch'}</span>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">Let&apos;s Work Together</h2>
-                <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto text-justify">
                   Have a project in mind or want to discuss opportunities? I&apos;d love to hear from you.
                 </p>
               </div>
@@ -1422,7 +1419,7 @@ function ProjectShowcase({
           whileHover={{ scale: 1.01 }}
           className="bg-gray-900 border border-gray-800 p-4 sm:p-5 md:p-6 rounded-lg"
         >
-          <p className="text-sm sm:text-base text-gray-300 leading-relaxed">{description}</p>
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-justify">{description}</p>
         </motion.div>
 
         <div className="flex flex-wrap gap-2 sm:gap-3">
@@ -1630,7 +1627,7 @@ function WorkItem({ year, title, company, description, tags }: {
 
         <h3 className="text-xl sm:text-2xl font-bold">{title}</h3>
         <p className="text-sm sm:text-base text-cyan-400 font-medium">{company}</p>
-        <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{description}</p>
+        <p className="text-sm sm:text-base text-gray-400 leading-relaxed text-justify">{description}</p>
 
         <div className="flex flex-wrap gap-2 pt-2">
           {tags.map((tag, index) => (
