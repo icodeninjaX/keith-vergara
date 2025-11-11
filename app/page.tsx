@@ -1246,20 +1246,21 @@ function ProjectShowcase({
 
 
   return (
-    <div className={`grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center ${direction === 'right' ? 'lg:direction-rtl' : ''}`}>
-      {/* Project Image Gallery */}
-      <motion.div
-        className="relative group"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3 }}
-      >
+    <div className="bg-gray-950/50 border border-gray-800 rounded-lg p-4 sm:p-6 md:p-8 backdrop-blur-sm">
+      <div className={`grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center ${direction === 'right' ? 'lg:direction-rtl' : ''}`}>
+        {/* Project Image Gallery */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-lg blur-xl"
-          animate={{ opacity: isHovered ? 0.3 : 0 }}
+          className="relative group"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
-        />
+        >
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-lg blur-xl"
+            animate={{ opacity: isHovered ? 0.3 : 0 }}
+            transition={{ duration: 0.3 }}
+          />
 
         {/* Main Image Display */}
         <div
@@ -1340,6 +1341,7 @@ function ProjectShowcase({
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 }
