@@ -453,11 +453,11 @@ export default function Home() {
                   {/* Accent line */}
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-purple-400 to-pink-400" />
 
-                  <div className="pl-4 sm:pl-6">
+                  <div className="pl-4 sm:pl-6 text-center">
                     <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                       My Development Philosophy
                     </h3>
-                    <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed text-justify">
+                    <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed text-center">
                       <p>
                         I believe great development isn&apos;t just about writing code—it&apos;s about <span className="text-white font-medium">understanding both the technical architecture and the human needs</span> behind every project.
                       </p>
@@ -759,37 +759,37 @@ export default function Home() {
 
                   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-xs sm:text-sm">
                     <div>
-                      <div className="font-bold text-cyan-400 mb-2 flex items-center gap-2">
+                      <div className="font-bold text-cyan-400 mb-2 flex items-center justify-center gap-2">
                         <span className="text-lg">01</span> Understand
                       </div>
-                      <p className="text-gray-400 leading-relaxed text-justify">
+                      <p className="text-gray-400 leading-relaxed text-center">
                         LPG distribution relied on manual processes causing errors and delays across two branches. The real problem wasn&apos;t lack of technology—it was inefficient communication and tracking.
                       </p>
                     </div>
 
                     <div>
-                      <div className="font-bold text-purple-400 mb-2 flex items-center gap-2">
+                      <div className="font-bold text-purple-400 mb-2 flex items-center justify-center gap-2">
                         <span className="text-lg">02</span> Empathize
                       </div>
-                      <p className="text-gray-400 leading-relaxed text-justify">
+                      <p className="text-gray-400 leading-relaxed text-center">
                         Staff needed quick order processing under pressure. Customers wanted transparency. Management needed reliable data for decisions—not just another dashboard.
                       </p>
                     </div>
 
                     <div>
-                      <div className="font-bold text-pink-400 mb-2 flex items-center gap-2">
+                      <div className="font-bold text-pink-400 mb-2 flex items-center justify-center gap-2">
                         <span className="text-lg">03</span> Build
                       </div>
-                      <p className="text-gray-400 leading-relaxed text-justify">
+                      <p className="text-gray-400 leading-relaxed text-center">
                         Built a comprehensive POS with SMS notifications for branch communication, real-time inventory tracking, and customer management—all integrated seamlessly.
                       </p>
                     </div>
 
                     <div>
-                      <div className="font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2 flex items-center gap-2">
+                      <div className="font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2 flex items-center justify-center gap-2">
                         <span className="text-lg">04</span> Iterate
                       </div>
-                      <p className="text-gray-400 leading-relaxed text-justify">
+                      <p className="text-gray-400 leading-relaxed text-center">
                         Result: 70% faster processing, 50% fewer errors. Continuous refinements based on daily operations made it truly indispensable.
                       </p>
                     </div>
@@ -811,9 +811,6 @@ export default function Home() {
               <div className="mb-10 sm:mb-12 md:mb-16 text-center">
                 <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wider">{'// Testimonials'}</span>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">What Others Say</h2>
-                <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto text-justify">
-                  Feedback from colleagues, supervisors, and clients I&apos;ve worked with.
-                </p>
               </div>
             </FadeInSection>
 
@@ -1384,7 +1381,7 @@ function ProjectShowcase({
       {/* Project Info */}
       <div className={`space-y-4 sm:space-y-5 md:space-y-6 ${direction === 'right' ? 'lg:direction-ltr' : ''}`}>
         <div>
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold">{title}</h3>
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center">{title}</h3>
         </div>
 
         <motion.div
