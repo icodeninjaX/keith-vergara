@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { motion, useInView, AnimatePresence, type PanInfo } from 'framer-motion';
 import Image from 'next/image';
 
 export default function Home() {
@@ -42,7 +42,7 @@ export default function Home() {
         setFormStatus('error');
         setTimeout(() => setFormStatus('idle'), 5000);
       }
-    } catch (error) {
+    } catch {
       setFormStatus('error');
       setTimeout(() => setFormStatus('idle'), 5000);
     }
@@ -590,8 +590,6 @@ export default function Home() {
                     '/device-monitoring-dashboard/Screenshot 2025-11-09 171250.png',
                   ]}
                   direction="left"
-                  liveUrl="#"
-                  githubUrl="#"
                 />
               </FadeInSection>
 
@@ -604,8 +602,6 @@ export default function Home() {
                     '/ads-booking-system/Screenshot 2025-11-09 171151.png',
                   ]}
                   direction="right"
-                  liveUrl="#"
-                  githubUrl="#"
                 />
               </FadeInSection>
 
@@ -620,8 +616,6 @@ export default function Home() {
                     '/multi-branch-map/Screenshot 2025-11-09 170906.png',
                   ]}
                   direction="left"
-                  liveUrl="#"
-                  githubUrl="#"
                 />
               </FadeInSection>
 
@@ -644,8 +638,6 @@ export default function Home() {
                     '/newzionpos/Screenshot 2025-11-01 175140.png',
                   ]}
                   direction="right"
-                  liveUrl="#"
-                  githubUrl="#"
                 />
               </FadeInSection>
             </div>
@@ -1213,8 +1205,6 @@ function ProjectShowcase({
   imageUrl,
   images,
   direction,
-  liveUrl,
-  githubUrl
 }: {
   title: string;
   description: string;
@@ -1222,8 +1212,6 @@ function ProjectShowcase({
   imageUrl?: string;
   images?: string[];
   direction: 'left' | 'right';
-  liveUrl: string;
-  githubUrl: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -1246,7 +1234,7 @@ function ProjectShowcase({
   };
 
   // Handle swipe gestures
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const swipeThreshold = 50; // Minimum distance for a swipe
 
     if (Math.abs(info.offset.x) > swipeThreshold) {

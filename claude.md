@@ -247,7 +247,21 @@ npm run lint
 
 ## Recent Updates
 
-### Text Alignment Improvements (Latest)
+### ESLint and TypeScript Fixes (Latest - 2025-11-11)
+- **Type Safety Improvements**:
+  - Added proper TypeScript types for Framer Motion drag handlers by importing `PanInfo` type
+  - Replaced `any` types with specific types: `MouseEvent | TouchEvent | PointerEvent` and `PanInfo`
+  - Prefixed unused `event` parameter with underscore (`_event`) to follow ESLint conventions
+
+- **Code Cleanup**:
+  - Removed unused `error` variable in try-catch block (line 45)
+  - Removed unused `liveUrl` and `githubUrl` props from `ProjectShowcase` component
+  - Removed `liveUrl` and `githubUrl` from all `ProjectShowcase` component calls
+  - Fixed all ESLint warnings and errors for successful production build
+
+- **Build Status**: Successfully builds with no ESLint errors or warnings (except metadataBase warning)
+
+### Text Alignment Improvements (2025-11-09)
 - **Global Text Justification**: Applied `text-justify` to all paragraph content throughout the portfolio for a professional, polished appearance
   - Hero section intro paragraph
   - About Me section (all paragraphs in philosophy cards and main content)
@@ -282,9 +296,9 @@ npm run lint
 ## Git Status
 
 Current branch: `main`
-Modified files:
-- `app/page.tsx` - Updated text alignment (justified paragraphs, centered "How I Work" cards)
-- `CLAUDE.md` - Updated documentation to reflect recent changes
+Recent changes:
+- `app/page.tsx` - Fixed ESLint errors and TypeScript type issues for production build
+- `CLAUDE.md` - Updated documentation with ESLint fixes and build improvements
 
 ## Deployment
 
