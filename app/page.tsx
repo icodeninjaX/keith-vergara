@@ -1227,6 +1227,7 @@ function ProjectShowcase({
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   // Blur placeholder for loading states
   const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxMTE4MjciLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzBjMTAxYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzExMTgyNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNDc1IiBmaWxsPSJ1cmwoI2cpIi8+PC9zdmc+";
@@ -1244,8 +1245,34 @@ function ProjectShowcase({
     setCurrentImageIndex((prev) => (prev - 1 + imageArray.length) % imageArray.length);
   };
 
+  // Handle swipe gestures
+  const handleDragEnd = (event: any, info: any) => {
+    const swipeThreshold = 50; // Minimum distance for a swipe
+
+    if (Math.abs(info.offset.x) > swipeThreshold) {
+      if (info.offset.x > 0) {
+        // Swiped right - go to previous image
+        prevImage();
+      } else {
+        // Swiped left - go to next image
+        nextImage();
+      }
+    }
+  };
+
+  // Open fullscreen
+  const openFullscreen = () => {
+    setIsFullscreen(true);
+  };
+
+  // Close fullscreen
+  const closeFullscreen = () => {
+    setIsFullscreen(false);
+  };
+
 
   return (
+    <>
     <div className="bg-gray-950/50 border border-gray-800 rounded-lg p-4 sm:p-6 md:p-8 backdrop-blur-sm">
       <div className={`grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center ${direction === 'right' ? 'lg:direction-rtl' : ''}`}>
         {/* Project Image Gallery */}
@@ -1262,26 +1289,46 @@ function ProjectShowcase({
             transition={{ duration: 0.3 }}
           />
 
-        {/* Main Image Display */}
-        <div
-          className="relative aspect-video bg-gray-900 border border-gray-800 rounded-lg overflow-hidden"
+        {/* Main Image Display with Swipe Support */}
+        <motion.div
+          className="relative aspect-video bg-gray-900 border border-gray-800 rounded-lg overflow-hidden cursor-pointer"
+          drag={hasMultipleImages ? "x" : false}
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={handleDragEnd}
+          onClick={openFullscreen}
         >
           <Image
             src={currentImage}
             alt={`${title} - Screenshot ${currentImageIndex + 1}`}
             fill
-            className="object-cover object-top transition-all duration-500"
+            className="object-cover object-top transition-all duration-500 pointer-events-none"
             placeholder="blur"
             blurDataURL={blurDataURL}
             key={currentImageIndex}
           />
-          {/* Navigation Arrows - Only show if multiple images */}
+
+          {/* Tap to Fullscreen Indicator (Mobile Only) */}
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center bg-black/0 hover:bg-black/30 transition-colors lg:hidden"
+            initial={{ opacity: 0 }}
+            whileHover={{ opacity: 1 }}
+          >
+            <div className="bg-black/70 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-mono opacity-0 group-hover:opacity-100 transition-opacity">
+              Tap to view fullscreen
+            </div>
+          </motion.div>
+
+          {/* Navigation Arrows - Desktop Only */}
           {hasMultipleImages && (
             <>
               <motion.button
-                onClick={prevImage}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prevImage();
+                }}
                 aria-label="Previous image"
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 hidden lg:flex"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -1291,9 +1338,12 @@ function ProjectShowcase({
               </motion.button>
 
               <motion.button
-                onClick={nextImage}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextImage();
+                }}
                 aria-label="Next image"
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 hidden lg:flex"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -1308,7 +1358,7 @@ function ProjectShowcase({
               </div>
             </>
           )}
-        </div>
+        </motion.div>
       </motion.div>
 
       {/* Project Info */}
@@ -1343,6 +1393,119 @@ function ProjectShowcase({
       </div>
     </div>
     </div>
+
+    {/* Fullscreen Modal */}
+    <AnimatePresence>
+      {isFullscreen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-[100] bg-black flex items-center justify-center"
+          onClick={closeFullscreen}
+        >
+          {/* Close Button */}
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ delay: 0.1 }}
+            onClick={closeFullscreen}
+            className="absolute top-4 right-4 z-[110] bg-black/50 hover:bg-black/70 text-white p-3 rounded-full backdrop-blur-sm transition-all"
+            aria-label="Close fullscreen"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </motion.button>
+
+          {/* Fullscreen Image with Swipe */}
+          <motion.div
+            className="relative w-full h-full flex items-center justify-center p-4"
+            onClick={(e) => e.stopPropagation()}
+            drag={hasMultipleImages ? "x" : false}
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={handleDragEnd}
+          >
+            <div className="relative w-full h-full max-w-7xl max-h-[90vh]">
+              <Image
+                src={currentImage}
+                alt={`${title} - Screenshot ${currentImageIndex + 1} (Fullscreen)`}
+                fill
+                className="object-contain pointer-events-none"
+                placeholder="blur"
+                blurDataURL={blurDataURL}
+                key={`fullscreen-${currentImageIndex}`}
+              />
+            </div>
+
+            {/* Navigation Arrows for Fullscreen */}
+            {hasMultipleImages && (
+              <>
+                <motion.button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    prevImage();
+                  }}
+                  aria-label="Previous image"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-[105] bg-black/70 hover:bg-black/90 text-white p-4 rounded-full backdrop-blur-sm transition-all"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </motion.button>
+
+                <motion.button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    nextImage();
+                  }}
+                  aria-label="Next image"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-[105] bg-black/70 hover:bg-black/90 text-white p-4 rounded-full backdrop-blur-sm transition-all"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.button>
+
+                {/* Image Counter for Fullscreen */}
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[105] bg-black/70 backdrop-blur-sm px-6 py-3 rounded-full text-white font-mono">
+                  {currentImageIndex + 1} / {imageArray.length}
+                </div>
+
+                {/* Swipe Instruction (Shows briefly) */}
+                <motion.div
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 0 }}
+                  transition={{ delay: 2, duration: 1 }}
+                  className="absolute bottom-24 left-1/2 -translate-x-1/2 z-[105] bg-black/70 backdrop-blur-sm px-6 py-3 rounded-full text-white text-sm font-mono lg:hidden"
+                >
+                  ← Swipe to navigate →
+                </motion.div>
+              </>
+            )}
+
+            {/* Project Title in Fullscreen */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="absolute top-4 left-4 z-[105] bg-black/70 backdrop-blur-sm px-6 py-3 rounded-full text-white font-mono"
+            >
+              <span className="text-cyan-400 text-sm">{'// '}</span>
+              <span className="text-sm">{title}</span>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   );
 }
 
