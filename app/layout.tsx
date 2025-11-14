@@ -84,8 +84,49 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Structured data for SEO (JSON-LD)
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Keith Vergara",
+    "jobTitle": "Full-Stack Web Developer",
+    "url": "https://your-domain.com",
+    "sameAs": [
+      "https://github.com/your-github",
+      "https://linkedin.com/in/your-linkedin"
+    ],
+    "knowsAbout": [
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Web Development",
+      "Full-Stack Development",
+      "Database Design",
+      "Bootstrap",
+      "AJAX"
+    ],
+    "description": "Full-stack developer building web applications that solve real business problems. Specializing in PHP, MySQL, JavaScript, and creating user-focused solutions.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "X-Meta Technologies Inc"
+    }
+  };
+
   return (
     <html lang="en">
+      <head>
+        {/* Font Preconnect for Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body
         className={`${poppins.variable} ${firaCode.variable} antialiased`}
       >

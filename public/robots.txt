@@ -1,0 +1,7 @@
+# Allow all search engines to crawl all pages
+User-agent: *
+Allow: /
+
+# Sitemap location
+# Update this URL with your actual domain after deployment
+Sitemap: https://your-domain.com/sitemap.xml

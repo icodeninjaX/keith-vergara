@@ -168,7 +168,7 @@ export default function Home() {
                 <div className="space-y-3">
                   <div className="text-sm text-gray-500 font-mono mb-4">{'// Connect'}</div>
                   {[
-                    { label: 'Email', href: 'mailto:your.email@example.com' },
+                    { label: 'Email', href: 'mailto:keithvergara1997@gmail.com' },
                     { label: 'GitHub', href: 'https://github.com' },
                     { label: 'LinkedIn', href: 'https://linkedin.com' },
                     { label: 'Twitter', href: 'https://twitter.com' }
@@ -1083,6 +1083,18 @@ export default function Home() {
                       </motion.div>
                     )}
                   </AnimatePresence>
+
+                  {/* ARIA Live Region for Screen Reader Announcements */}
+                  <div
+                    role="alert"
+                    aria-live="polite"
+                    aria-atomic="true"
+                    className="sr-only"
+                  >
+                    {formStatus === 'success' && 'Message sent successfully!'}
+                    {formStatus === 'error' && 'Failed to send message. Please try again.'}
+                    {formStatus === 'submitting' && 'Sending message...'}
+                  </div>
                 </div>
 
                 <p className="text-sm text-gray-500 mt-6">
